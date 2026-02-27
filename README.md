@@ -33,8 +33,9 @@ I focus on building stable systems and efficient data workflows:
 ## 📫 Connect With Me
 I'm always open to discussing new projects, IT consulting, or backend collaborations.
 
-* **📱 WhatsApp:** [Chat with me](https://wa.me/972549215862)
 * **📧 Email:** [liormahfoda@gmail.com](mailto:liormahfoda@gmail.com)
+* **📱 WhatsApp:** [Chat with me](https://wa.me/972549215862)
+* **🎵 TikTok:** [@lior_it_services](https://www.tiktok.com/@lior_it_services)
 * **🔗 LinkedIn:** [Lior Mahfoda](https://www.linkedin.com/in/lior-mahfoda/)
 * **🌐 Website:** [Lior-IT.com](https://Lior-IT.com)
 
