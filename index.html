@@ -3,42 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ליאור מחפודה | פתרונות מחשוב ותמיכה טכנית</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>ליאור מחפודה | טכנאי מחשבים PC ומהנדס תוכנה</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: 'Assistant', sans-serif; }
+    .service-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-<nav>
-  <div class="inner">
-    <a href="#" class="logo">LIOR TECH</a>
-    <ul class="nav-links">
-      <li><a href="#services">שירותים</a></li>
-      <li><a href="#about">אודות</a></li>
-      <li><a href="#contact">צור קשר</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <span class="badge">זמין לקריאות שירות</span>
-      <h1>פתרונות מחשוב <span>מקצועיים</span></h1>
-      <p>תיקון, תחזוקה ותמיכה טכנית לבית ולעסק. שירות מהיר, אמין ומקצועי עד אליך או מרחוק.</p>
-      <div class="hero-cta">
-        <a href="tel:0549215862" class="btn btn-primary">התקשרו עכשיו: 054-9215862</a>
-        <a href="#services" class="btn btn-ghost">לכל השירותים</a>
-      </div>
-    </div>
+<header class="bg-blue-900 text-white py-20 px-6 text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">ליאור מחפודה</h1>
+  <p class="text-xl md:text-2xl font-light opacity-90">מהנדס תוכנה (B.Sc) ומומחה IT</p>
+  <div class="mt-8 flex justify-center gap-4">
+    <a href="mailto:liormahfoda@gmail.com" class="bg-white text-blue-900 px-6 py-2 rounded-full font-bold hover:bg-blue-100 transition">צור קשר במייל</a>
+    <a href="https://www.linkedin.com/in/lior-mahfoda/" target="_blank" class="border border-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-blue-900 transition">LinkedIn</a>
   </div>
 </header>
 
-<section id="services">
-  <div class="container">
-    <h2 class="section-title">השירותים שלנו</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="icon">🛠️</div>
-        <h3>תיקון ואיתור תקלות</h3>
-        <p>אבחון מעמיק ופתרון ל
+<section id="about" class="py-16 px-6 bg-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8 text-blue-800 border-b-2 border-blue-100 pb-2 inline-block">קצת עלי</h2>
+    <p class="text-lg leading-relaxed mb-8">
+      אני מהנדס תוכנה ואיש IT מנוסה, המשלב רקע אקדמי עם ניסיון מעשי "בידיים" כטכנאי מחשבים PC. צברתי מומחיות בפתרון תקלות מורכבות, ניהול משתמשים ב-Active Directory ומתן שירות במוקדי תמיכה בענן עבור חטיבות טכנולוגיות גדולות.
+      הניסיון שלי כולל עבודה במערך הסייבר הלאומי ובחברות מובילות כמו One טכנולוגיות ונס.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-semibold">
+      <div class="p-4 bg-blue-50 rounded-xl shadow-sm border border-blue-100">B.Sc בהנדסת תוכנה</div>
+      <div class="p-4 bg-blue-50 rounded-xl shadow-sm border border-blue-100">טכנאי מחשבים PC</div>
+      <div class="p-4 bg-blue-50 rounded-xl shadow-sm border border-blue-100">ניהול Active Directory</div>
+      <div class="p-4 bg-blue-50 rounded-xl shadow-sm border border-blue-100">תמיכת IT בענן</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="py-16 px-6 bg-gray-50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-800">שירותים ומקצועיות</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600">
+        <div class="text-4xl text-blue-600 mb-4"><i class="fas fa-laptop-medical"></i></div>
+        <h3 class="text-xl font-bold mb-3">טכנאי מחשבים PC ומומחה IT</h3>
+        <p class="text-gray-600 leading-relaxed">תמיכה טכנית Tier 1, פתרון תקלות חומרה ותוכנה, והכנת עמדות מחשוב מקצה לקצה. ניסיון עשיר בהשתלטות מרחוק וניהול קריאות.</p>
+      </div>
+
+      <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600">
+        <div class="text-4xl text-blue-600 mb-4"><i class="fas fa-network-wired"></i></div>
+        <h3 class="text-xl font-bold mb-3">תשתיות ענן ורשתות</h3>
+        <p class="text-gray-600 leading-relaxed">ניהול משתמשים ב-Active Directory, הגדרת VPN (FortiVPN) ותמיכה מלאה בסביבת Office 365.</p>
+      </div>
+
+      <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600">
+        <div class="text-4xl text-blue-600 mb-4"><i class="fas fa-user-shield"></i></div>
+        <h3 class="text-xl font-bold mb-3">אבטחת סייבר וניטור</h3>
+        <p class="text-gray-600 leading-relaxed">ניטור וזיהוי אירועי סייבר, בדיקות תוכנה וסיוע מחקרי בחולשות. ניסיון ממערך הסייבר הלאומי.</p>
+      </div>
+
+      <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600">
+        <div class="text-4xl text-blue-600 mb-4"><i class="fas fa-code"></i></div>
