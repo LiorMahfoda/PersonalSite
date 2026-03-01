@@ -3,42 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ליאור מחפודה | פתרונות מחשוב ותמיכה טכנית</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Lior IT Services | שירותי מחשוב ותמיכה</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-blue: #003366;
+      --light-blue: #00a8e8;
+      --text-white: #ffffff;
+      --bg-dark: #001220;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.6;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(0, 18, 32, 0.8), rgba(0, 18, 32, 0.8)),
+      url('https://www.transparenttextures.com/patterns/circuit-board.png');
+      padding: 20px;
+    }
+
+    .logo-placeholder {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    h1 { font-size: 3rem; margin: 0; color: var(--light-blue); }
+    .slogan { font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 30px; }
+
+    /* Services Grid */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px 10%;
+      background: #ffffff;
+      color: #333;
+    }
+
+    .service-card {
+      background: #f4f7f6;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+      border-bottom: 4px solid var(--primary-blue);
+    }
+
+    .service-card:hover { transform: translateY(-10px); }
+    .service-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px; }
+
+    /* Contact Section */
+    .contact {
+      padding: 50px;
+      text-align: center;
+      background: var(--primary-blue);
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: var(--light-blue);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      <section class="hero">
+      <img src="logo.png" alt="Lior IT Services Logo" class="logo-placeholder">
+      <p class="slogan">Fast. Reliable. Personal.</p>
+      <p>פתרונות מחשוב מקצועיים לעסקים ולפרטיים</p>
+      <a href="#services" class="cta-button">לצפייה בשירותים</a>
+      </section>
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="inner">
-    <a href="#" class="logo">LIOR TECH</a>
-    <ul class="nav-links">
-      <li><a href="#services">שירותים</a></li>
-      <li><a href="#about">אודות</a></li>
-      <li><a href="#contact">צור קשר</a></li>
-    </ul>
-  </div>
-</nav>
+<section class="hero">
+  <h1>Lior IT Services</h1>
+  <p class="slogan">Fast. Reliable. Personal.</p>
+  <p>פתרונות מחשוב מקצועיים לעסקים ולפרטיים</p>
+  <a href="#services" class="cta-button">לצפייה בשירותים</a>
+</section>
 
-<header class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <span class="badge">זמין לקריאות שירות</span>
-      <h1>פתרונות מחשוב <span>מקצועיים</span></h1>
-      <p>תיקון, תחזוקה ותמיכה טכנית לבית ולעסק. שירות מהיר, אמין ומקצועי עד אליך או מרחוק.</p>
-      <div class="hero-cta">
-        <a href="tel:0549215862" class="btn btn-primary">התקשרו עכשיו: 054-9215862</a>
-        <a href="#services" class="btn btn-ghost">לכל השירותים</a>
-      </div>
-    </div>
+<section id="services" class="services">
+  <div class="service-card">
+    <i class="fas fa-tools"></i>
+    <h3>תיקון מחשבים</h3>
+    <p>איתור ותיקון תקלות חומרה ותוכנה לכל סוגי המחשבים.</p>
   </div>
-</header>
+  <div class="service-card">
+    <i class="fas fa-rocket"></i>
+    <h3>שיפור ביצועים</h3>
+    <p>האצת מחשבים איטיים ושדרוג מערכות קיימות.</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-windows"></i>
+    <h3>התקנת מערכות</h3>
+    <p>התקנה ושדרוג מערכות Windows והתאמת תוכנות אישית.</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-headset"></i>
+    <h3>תמיכה מרחוק</h3>
+    <p>פתרון בעיות טכניות מהיר ללא צורך בהגעה למעבדה.</p>
+  </div>
+  <div class="service-card">
+    <i class="fas fa-database"></i>
+    <h3>גיבוי ושחזור</h3>
+    <p>הגנה על המידע היקר שלך ושחזור קבצים שאבדו.</p>
+  </div>
+</section>
 
-<section id="services">
-  <div class="container">
-    <h2 class="section-title">השירותים שלנו</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="icon">🛠️</div>
-        <h3>תיקון ואיתור תקלות</h3>
-        <p>אבחון מעמיק ופתרון ל
+<section class="contact">
+  <h2>צריכים עזרה טכנית?</h2>
+  <p>זמין עבורכם לכל שאלה בטלפון: 054-9215862</p>
+  <a href="tel:0549215862" class="cta-button">התקשרו עכשיו</a>
+</section>
+
+<a href="https://wa.me/972549215862" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
