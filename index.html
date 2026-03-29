@@ -68,7 +68,14 @@
     .hero h1 { font-size: 36px; color: #fff; font-weight: 700; margin-bottom: 0.75rem; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
     .hero h1 span { color: #4a9eff; }
     .hero p { font-size: 16px; color: #c8dff5; margin-bottom: 2rem; text-shadow: 0 1px 6px rgba(0,0,0,0.4); }
-    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btns-bar {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      padding: 1.5rem 2rem;
+      background: rgba(5, 15, 35, 0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(74,158,255,0.15);
+      position: relative; z-index: 1;
+    }
     .btn-primary {
       background: #4a9eff; color: #0f2744; border: none;
       padding: 12px 32px; border-radius: 24px; font-size: 15px; font-weight: 700;
@@ -273,10 +280,12 @@
     </div>
     <h1 id="heroTitle">טכנאי מחשבים <span>מוסמך ומנוסה</span></h1>
     <p id="heroSub">תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="#contact" id="heroBtn1">צרו קשר</a>
-      <a class="btn-secondary" href="#services" id="heroBtn2">צפייה בשירותים</a>
-    </div>
+  </div>
+
+  <!-- BUTTONS BAR -->
+  <div class="btns-bar">
+    <a class="btn-primary" href="#contact" id="heroBtn1">צרו קשר</a>
+    <a class="btn-secondary" href="#services" id="heroBtn2">צפייה בשירותים</a>
   </div>
 
   <!-- SERVICES -->
