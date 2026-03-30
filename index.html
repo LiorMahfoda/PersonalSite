@@ -43,9 +43,9 @@
     /* HERO — logo as real centered image, text on top */
     .hero {
       position: relative;
-      min-height: 420px;
+      min-height: 520px;
       display: flex;
-      align-items: center;
+      align-items: stretch;
       justify-content: center;
       overflow: hidden;
       background: linear-gradient(180deg, #0a1932 0%, #0f2744 100%);
@@ -69,8 +69,17 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 0;
     }
+    .hero-content .hero-top { margin-bottom: auto; }
+    .hero-content .hero-middle { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0; }
+    .hero-content .hero-bottom { margin-top: auto; }
     .remote-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(74,158,255,0.15); border: 1px solid rgba(74,158,255,0.4);
@@ -243,19 +252,22 @@
     <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
   </nav>
 
-  <!-- HERO: logo as real image in background, text centered on top -->
+  <!-- HERO: לוגו למעלה — טקסט למטה — בלי דריסה -->
   <div class="hero">
-    <div class="hero-logo-bg">
-      <img src="Lior_IT_Buisness.png" alt="" />
+    <!-- לוגו לבד בחלק העליון -->
+    <div class="hero-logo-zone">
+      <img src="Lior_IT_Buisness.png" alt="Lior IT Services" />
     </div>
-    <div class="hero-content">
+    <div class="hero-divider"></div>
+    <!-- טקסט וכפתורים בחלק התחתון -->
+    <div class="hero-text-zone">
       <div class="remote-badge">
         <div class="pulse"></div>
         <span id="remoteBadge">השתלטות מרחוק זמינה עכשיו</span>
       </div>
       <h1 id="heroTitle">טכנאי מחשבים <span>מוסמך ומנוסה</span></h1>
       <p id="heroSub">תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק</p>
-      <div style="margin-top:3.5rem;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <div class="hero-btns">
         <a class="btn-primary" href="#contact" id="heroBtn1">צרו קשר</a>
         <a class="btn-secondary" href="#services" id="heroBtn2">צפייה בשירותים</a>
       </div>
