@@ -6,33 +6,23 @@
   <title>Lior IT Services | שירותי מחשוב ותמיכה</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1932; color: #fff; overflow-x: hidden; width: 100%; }
 
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #1a1a2e;
-      min-height: 100vh;
-      background: #0a1932;
-    }
-
-    nav, .hero, .btns-bar, .services-section, .exp-section, .contact-section, footer {
-      position: relative; z-index: 1;
-    }
-
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      background: rgba(15,39,68,0.95);
+      background: #0f2744;
       padding: 0 2rem;
       display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
+      height: 70px;
       border-bottom: 1px solid rgba(74,158,255,0.3);
       position: sticky; top: 0; z-index: 100;
+      width: 100%; overflow: hidden;
     }
     .logo-area { display: flex; align-items: center; gap: 12px; }
     .logo-area img { height: 44px; width: auto; border-radius: 6px; }
-    .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
-    .logo-text .brand { font-size: 18px; font-weight: 600; color: #fff; }
+    .logo-text .brand { font-size: 17px; font-weight: 600; color: #fff; }
     .logo-text .brand span { color: #4a9eff; }
-    .logo-text .tagline { font-size: 10px; color: #8ab4d4; letter-spacing: 1.5px; text-transform: uppercase; }
+    .logo-text .tagline { font-size: 10px; color: #8ab4d4; letter-spacing: 1.5px; }
     .lang-btn {
       background: transparent; border: 1px solid #4a9eff; color: #4a9eff;
       padding: 6px 20px; border-radius: 20px; cursor: pointer;
@@ -40,72 +30,61 @@
     }
     .lang-btn:hover { background: #4a9eff; color: #0f2744; }
 
-    /* HERO — logo as real centered image, text on top */
-    .hero {
-      position: relative;
-      min-height: 520px;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      overflow: hidden;
-      background: linear-gradient(180deg, #0a1932 0%, #0f2744 100%);
-    }
-    .hero-logo-bg {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-    .hero-logo-bg img {
-      width: 100%;
-      max-width: 900px;
-      opacity: 0.45;
-      filter: brightness(1.6) saturate(1.2) contrast(1.1);
-      object-fit: contain;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
+    /* ── TOP SECTION: לוגו גדול, לבד, ממורכז ── */
+    .logo-section {
+      background: #0f2744;
+      padding: 3rem 2rem 2rem;
       text-align: center;
-      padding: 2.5rem 2rem 2.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
+      border-bottom: 1px solid rgba(74,158,255,0.2);
       width: 100%;
-      gap: 0;
+      overflow: hidden;
     }
-    .hero-content .hero-top { margin-bottom: auto; }
-    .hero-content .hero-middle { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem 0; }
-    .hero-content .hero-bottom { margin-top: auto; }
+    .logo-section img {
+      width: 80%;
+      max-width: 660px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ── TAGLINE SECTION: כיתוב + כפתורים, נפרד לגמרי ── */
+    .tagline-section {
+      background: #0a1932;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-bottom: 2px solid rgba(74,158,255,0.15);
+      overflow: hidden;
+    }
+    .tagline-section > * {
+      direction: ltr;
+      unicode-bidi: embed;
+    }
+    .tagline-section h1,
+    .tagline-section p,
+    .tagline-section .remote-badge,
+    .tagline-section .hero-btns {
+      direction: rtl;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .remote-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(74,158,255,0.15); border: 1px solid rgba(74,158,255,0.4);
-      color: #4a9eff; padding: 6px 20px; border-radius: 20px;
+      background: rgba(74,158,255,0.12); border: 1px solid rgba(74,158,255,0.35);
+      color: #4a9eff; padding: 6px 18px; border-radius: 20px;
       font-size: 12px; margin-bottom: 1.25rem;
     }
     .pulse { width: 8px; height: 8px; border-radius: 50%; background: #4a9eff; animation: pulse 1.5s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-    .hero-content h1 {
-      font-size: 36px; color: #fff; font-weight: 700; margin-bottom: 0.75rem;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 40px rgba(0,0,0,0.6);
+    .tagline-section h1 {
+      font-size: 32px; font-weight: 700; color: #fff;
+      margin-bottom: 0.75rem;
     }
-    .hero-content h1 span { color: #4a9eff; }
-    .hero-content p {
-      font-size: 16px; color: #c8dff5;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.9);
-    }
-
-    /* BUTTONS BAR */
-    .btns-bar {
-      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-      padding: 1.5rem 2rem;
-      background: rgba(5,15,35,0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(74,158,255,0.15);
-    }
+    .tagline-section h1 span { color: #4a9eff; }
+    .tagline-section p { font-size: 15px; color: #8ab4d4; margin-bottom: 1.75rem; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
       background: #4a9eff; color: #0f2744; border: none;
       padding: 12px 32px; border-radius: 24px; font-size: 15px; font-weight: 700;
@@ -113,46 +92,46 @@
     }
     .btn-primary:hover { background: #6ab4ff; }
     .btn-secondary {
-      background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.4);
+      background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4);
       padding: 12px 32px; border-radius: 24px; font-size: 15px;
       cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s;
     }
-    .btn-secondary:hover { background: rgba(255,255,255,0.18); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
 
-    /* SERVICES */
-    .services-section { padding: 3rem 2rem; background: rgba(10,25,50,0.92); }
-    .services-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; color: #fff; }
+    /* ── SERVICES ── */
+    .services-section { padding: 3rem 2rem; background: #0f2744; }
+    .services-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
     .services-section h2 span { color: #4a9eff; }
     .services-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 14px; max-width: 900px; margin: 0 auto;
     }
     .service-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(74,158,255,0.2);
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(74,158,255,0.2);
       border-radius: 14px; padding: 1.25rem 1rem; text-align: center;
       transition: background 0.2s, transform 0.2s;
     }
-    .service-card:hover { background: rgba(255,255,255,0.11); transform: translateY(-3px); }
+    .service-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
     .service-icon { font-size: 26px; margin-bottom: 8px; }
     .service-card h3 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 4px; }
     .service-card p { font-size: 11px; color: #8ab4d4; line-height: 1.5; }
     .remote-card { border-color: rgba(74,158,255,0.5); background: rgba(74,158,255,0.08); }
     .remote-card h3 { color: #4a9eff; }
 
-    /* EXPERIENCE */
-    .exp-section { padding: 3rem 2rem; background: rgba(5,15,35,0.92); }
-    .exp-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; color: #fff; }
+    /* ── EXPERIENCE ── */
+    .exp-section { padding: 3rem 2rem; background: #0a1932; }
+    .exp-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
     .exp-section h2 span { color: #4a9eff; }
     .exp-grid { display: flex; flex-direction: column; gap: 12px; max-width: 700px; margin: 0 auto; }
     .exp-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
       border-radius: 14px; padding: 1rem 1.25rem;
       display: flex; align-items: center; gap: 16px; transition: background 0.2s;
     }
-    .exp-card:hover { background: rgba(255,255,255,0.1); }
+    .exp-card:hover { background: rgba(255,255,255,0.09); }
     .exp-logo {
       width: 50px; height: 50px; border-radius: 10px;
-      background: rgba(74,158,255,0.2); border: 1px solid rgba(74,158,255,0.3);
+      background: rgba(74,158,255,0.15); border: 1px solid rgba(74,158,255,0.3);
       display: flex; align-items: center; justify-content: center;
       font-size: 10px; font-weight: 700; color: #4a9eff;
       flex-shrink: 0; text-align: center; line-height: 1.3;
@@ -161,32 +140,22 @@
     .exp-info p { font-size: 12px; color: #8ab4d4; margin-top: 2px; }
     .exp-badge {
       display: inline-block; font-size: 10px; padding: 3px 10px; border-radius: 10px;
-      background: rgba(74,158,255,0.15); color: #4a9eff; margin-top: 5px;
+      background: rgba(74,158,255,0.12); color: #4a9eff; margin-top: 5px;
     }
 
-    /* CONTACT */
-    .contact-section {
-      background: rgba(10,25,50,0.95);
-      padding: 3.5rem 2rem;
-      border-top: 1px solid rgba(74,158,255,0.2);
-    }
+    /* ── CONTACT ── */
+    .contact-section { background: #0f2744; padding: 3.5rem 2rem; border-top: 1px solid rgba(74,158,255,0.2); }
     .contact-section h2 { color: #fff; font-size: 24px; font-weight: 600; margin-bottom: 0.5rem; text-align: center; }
     .contact-section .subtitle { color: #8ab4d4; font-size: 14px; margin-bottom: 2rem; text-align: center; }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; max-width: 900px; margin: 0 auto; align-items: start;
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 900px; margin: 0 auto; align-items: start; }
     .quick-contact h3 { color: #4a9eff; font-size: 16px; font-weight: 600; margin-bottom: 1.25rem; }
-    .phone-big {
-      font-size: 26px; font-weight: 700; color: #fff;
-      text-decoration: none; display: block; margin-bottom: 1rem; letter-spacing: 1px;
-    }
+    .phone-big { font-size: 26px; font-weight: 700; color: #fff; text-decoration: none; display: block; margin-bottom: 1rem; }
     .phone-big:hover { color: #4a9eff; }
     .btn-wa {
       display: inline-flex; align-items: center; gap: 10px;
       background: #25D366; color: #fff; border: none;
       padding: 11px 24px; border-radius: 24px; font-size: 14px; font-weight: 600;
-      cursor: pointer; text-decoration: none; transition: background 0.2s; margin-bottom: 2rem;
+      cursor: pointer; text-decoration: none; margin-bottom: 2rem; transition: background 0.2s;
     }
     .btn-wa:hover { background: #1ebe5d; }
     .btn-wa svg { width: 18px; height: 18px; flex-shrink: 0; }
@@ -196,36 +165,27 @@
     .contact-form { display: flex; flex-direction: column; gap: 12px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .contact-form label { font-size: 12px; color: #8ab4d4; display: block; margin-bottom: 4px; }
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
+    .contact-form input, .contact-form select, .contact-form textarea {
       width: 100%; background: rgba(255,255,255,0.07);
       border: 1px solid rgba(74,158,255,0.25); border-radius: 10px;
-      padding: 10px 14px; color: #fff; font-size: 14px; font-family: inherit;
-      transition: border-color 0.2s, background 0.2s; outline: none;
+      padding: 10px 14px; color: #fff; font-size: 14px; font-family: inherit; outline: none;
+      transition: border-color 0.2s;
     }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
-    .contact-form input:focus,
-    .contact-form select:focus,
-    .contact-form textarea:focus { border-color: #4a9eff; background: rgba(74,158,255,0.1); }
-    .contact-form select option { background: #0f2744; color: #fff; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: #4a9eff; }
+    .contact-form select option { background: #0f2744; }
     .contact-form textarea { resize: vertical; min-height: 100px; }
     .submit-btn {
       background: #4a9eff; color: #0f2744; border: none;
       padding: 13px 32px; border-radius: 24px; font-size: 15px; font-weight: 700;
-      cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 4px;
+      cursor: pointer; width: 100%; margin-top: 4px; transition: background 0.2s;
     }
     .submit-btn:hover { background: #6ab4ff; }
-    .submit-btn:disabled { background: #3a7acc; cursor: not-allowed; opacity: 0.7; }
-    .form-success {
-      display: none; text-align: center; padding: 2rem;
-      background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3);
-      border-radius: 14px; color: #25D366; font-size: 16px; font-weight: 600;
-    }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success { display: none; text-align: center; padding: 2rem; background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3); border-radius: 14px; color: #25D366; font-size: 16px; font-weight: 600; }
     .form-error { display: none; font-size: 12px; color: #ff6b6b; margin-top: 8px; text-align: center; }
 
-    footer { background: rgba(5,10,25,0.98); text-align: center; padding: 1.25rem; color: #8ab4d4; font-size: 12px; }
+    footer { background: #060e1f; text-align: center; padding: 1.25rem; color: #8ab4d4; font-size: 12px; }
 
     [dir="rtl"] { direction: rtl; }
     [dir="ltr"] { direction: ltr; }
@@ -233,7 +193,7 @@
     @media (max-width: 680px) {
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .form-row { grid-template-columns: 1fr; }
-      .hero-content h1 { font-size: 26px; }
+      .tagline-section h1 { font-size: 24px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
@@ -245,32 +205,29 @@
     <div class="logo-area">
       <img src="Lior_IT_Buisness.png" alt="Lior IT Services" />
       <div class="logo-text">
-        <span class="brand">Lior <span>IT</span> Services</span>
-        <span class="tagline" id="tagline">מהיר · אמין · אישי</span>
+        <div class="brand">Lior <span>IT</span> Services</div>
+        <div class="tagline" id="tagline">מהיר · אמין · אישי</div>
       </div>
     </div>
     <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
   </nav>
 
-  <!-- HERO: לוגו למעלה — טקסט למטה — בלי דריסה -->
-  <div class="hero">
-    <!-- לוגו לבד בחלק העליון -->
-    <div class="hero-logo-zone">
-      <img src="Lior_IT_Buisness.png" alt="Lior IT Services" />
+  <!-- לוגו גדול — לבד, ללא שום כיתוב עליו -->
+  <div class="logo-section">
+    <img src="Lior_IT_Buisness.png" alt="Lior IT Services" />
+  </div>
+
+  <!-- כיתוב + כפתורים — מתחת ללוגו, בסקשן נפרד -->
+  <div class="tagline-section">
+    <div class="remote-badge">
+      <div class="pulse"></div>
+      <span id="remoteBadge">השתלטות מרחוק זמינה עכשיו</span>
     </div>
-    <div class="hero-divider"></div>
-    <!-- טקסט וכפתורים בחלק התחתון -->
-    <div class="hero-text-zone">
-      <div class="remote-badge">
-        <div class="pulse"></div>
-        <span id="remoteBadge">השתלטות מרחוק זמינה עכשיו</span>
-      </div>
-      <h1 id="heroTitle">טכנאי מחשבים <span>מוסמך ומנוסה</span></h1>
-      <p id="heroSub">תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק</p>
-      <div class="hero-btns">
-        <a class="btn-primary" href="#contact" id="heroBtn1">צרו קשר</a>
-        <a class="btn-secondary" href="#services" id="heroBtn2">צפייה בשירותים</a>
-      </div>
+    <h1 id="heroTitle">טכנאי מחשבים <span>מוסמך ומנוסה</span></h1>
+    <p id="heroSub">תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#contact" id="heroBtn1">צרו קשר</a>
+      <a class="btn-secondary" href="#services" id="heroBtn2">צפייה בשירותים</a>
     </div>
   </div>
 
@@ -309,29 +266,18 @@
           <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           <span id="waBtn">שלחו WhatsApp</span>
         </a>
-        <div class="info-item"><span class="info-icon">📧</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="432f2a2c312e222b252c272203242e222a2f6d202c2e">[email&#160;protected]</a></span></div>
+        <div class="info-item"><span class="info-icon">📧</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="177b7e78657a767f7178737657707a767e7b3974787a">[email&#160;protected]</a></span></div>
         <div class="info-item"><span class="info-icon">📍</span><span id="areaText">אזור המרכז והדרום</span></div>
-        <div class="info-item"><span class="info-icon">⏰</span><span id="hoursText">זמין א'-ה' 9:00-19:00 | ו' עד כניסת שבת | מוצ"ש מצאת השבת</span></div>
+        <div class="info-item"><span class="info-icon">⏰</span><span id="hoursText">א'-ה' 9:00-19:00 | ו' עד כניסת שבת | מוצ"ש מצאת השבת</span></div>
       </div>
       <div>
-        <form class="contact-form" id="contactForm"
-              action="https://formspree.io/f/mpqoppwy"
-              method="POST">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mpqoppwy" method="POST">
           <div class="form-row">
-            <div>
-              <label id="labelName">שם מלא *</label>
-              <input type="text" name="name" id="fieldName" placeholder="ישראל ישראלי" required />
-            </div>
-            <div>
-              <label id="labelPhone">טלפון *</label>
-              <input type="tel" name="phone" id="fieldPhone" placeholder="05X-XXXXXXX" required />
-            </div>
+            <div><label id="labelName">שם מלא *</label><input type="text" name="name" id="fieldName" placeholder="ישראל ישראלי" required /></div>
+            <div><label id="labelPhone">טלפון *</label><input type="tel" name="phone" id="fieldPhone" placeholder="05X-XXXXXXX" required /></div>
           </div>
           <div class="form-row">
-            <div>
-              <label id="labelCity">עיר / אזור</label>
-              <input type="text" name="city" id="fieldCity" placeholder="תל אביב, באר שבע..." />
-            </div>
+            <div><label id="labelCity">עיר / אזור</label><input type="text" name="city" id="fieldCity" placeholder="תל אביב, באר שבע..." /></div>
             <div>
               <label id="labelService">סוג השירות</label>
               <select name="service" id="fieldService">
@@ -345,56 +291,42 @@
               </select>
             </div>
           </div>
-          <div>
-            <label id="labelDesc">תיאור הבעיה</label>
-            <textarea name="description" id="fieldDesc" placeholder="תארו בקצרה את הבעיה או מה אתם צריכים..."></textarea>
-          </div>
-          <input type="hidden" name="_subject" value="פנייה חדשה מהאתר — Lior IT Services" />
+          <div><label id="labelDesc">תיאור הבעיה</label><textarea name="description" id="fieldDesc" placeholder="תארו בקצרה את הבעיה..."></textarea></div>
+          <input type="hidden" name="_subject" value="פנייה חדשה — Lior IT Services" />
           <button type="submit" class="submit-btn" id="submitBtn">שליחה</button>
-          <p class="form-error" id="formError">אירעה שגיאה, אנא נסו שוב או צרו קשר ישירות.</p>
+          <p class="form-error" id="formError">אירעה שגיאה, נסו שוב או צרו קשר ישירות.</p>
         </form>
-        <div class="form-success" id="formSuccess">
-          <span id="successMsg">תודה! קיבלנו את פנייתך ונחזור אליך בהקדם.</span>
-        </div>
+        <div class="form-success" id="formSuccess"><span id="successMsg">תודה! קיבלנו את פנייתך ונחזור אליך בהקדם.</span></div>
       </div>
     </div>
   </div>
 
-  <footer><span id="footerText">2025 Lior IT Services</span></footer>
+  <footer><span id="footerText">© 2025 Lior IT Services · כל הזכויות שמורות</span></footer>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const form = document.getElementById('contactForm');
     const successBox = document.getElementById('formSuccess');
     const errorMsg = document.getElementById('formError');
     const submitBtn = document.getElementById('submitBtn');
-
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       submitBtn.disabled = true;
       submitBtn.textContent = '...שולח';
       errorMsg.style.display = 'none';
       try {
-        const res = await fetch(form.action, {
-          method: 'POST', body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) { form.style.display = 'none'; successBox.style.display = 'block'; }
-        else { throw new Error(); }
-      } catch {
-        errorMsg.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = cur === 'he' ? 'שליחה' : 'Send';
-      }
+        const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+        if (res.ok) { form.style.display='none'; successBox.style.display='block'; }
+        else throw new Error();
+      } catch { errorMsg.style.display='block'; submitBtn.disabled=false; submitBtn.textContent=cur==='he'?'שליחה':'Send'; }
     });
 
     const txt = {
-      he: { dir:"rtl", lang:"EN", tagline:"מהיר · אמין · אישי", remoteBadge:"השתלטות מרחוק זמינה עכשיו", heroTitle:'טכנאי מחשבים <span>מוסמך ומנוסה</span>', heroSub:"תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק", heroBtn1:"צרו קשר", heroBtn2:"צפייה בשירותים", servicesTitle:'<span>שירותים</span> מקצועיים', s1t:"השתלטות מרחוק", s1d:"פתרון תקלות מהיר ללא צורך בהגעה פיזית", s2t:"תיקון מחשבים", s2d:"תקלות חומרה ותוכנה לכל סוגי המחשבים", s3t:"שיפור ביצועים", s3d:"האצת מחשבים איטיים ושדרוג מערכות", s4t:"גיבוי ושחזור", s4d:"הגנה על המידע ושחזור קבצים שאבדו", s5t:"התקנת Windows", s5d:"התקנה ושדרוג מערכת הפעלה", expTitle:'<span>ניסיון</span> מקצועי', e1c:"One טכנולוגיות", e1r:"תומך טכני Tier 1 / טכנאי מחשבים", e1b:"השתלטות מרחוק · SysAid · AD · AnyDesk", e2c:"נס טכנולוגיות", e2r:"מטמיע ומדריך מערכות מידע", e2b:"תמיכה · הדרכה · הרשאות גישה", e3c:"ג'ון ברייס", e3r:"מטמיע ומדריך מערכות מידע", e3b:"Microsoft 365 CRM · רשות המיסים", e4c:"מערך הסייבר הלאומי", e4r:"עוזר טכנולוגי / אנליסט", e4b:"ניטור · זיהוי אירועי סייבר · מחקר", contactTitle:"צרו קשר", contactSub:"השאירו פרטים ואחזור אליכם בהקדם", quickTitle:"מעדיפים ישירות?", waBtn:"שלחו WhatsApp", areaText:"אזור המרכז והדרום", hoursText:'זמין א\'-ה\' 9:00-19:00 | ו\' עד כניסת שבת | מוצ"ש מצאת השבת', labelName:"שם מלא *", labelPhone:"טלפון *", labelCity:"עיר / אזור", labelService:"סוג השירות", labelDesc:"תיאור הבעיה", optDefault:"בחר שירות...", optRemote:"השתלטות מרחוק", optRepair:"תיקון מחשב", optUpgrade:"שדרוג מחשב", optWindows:"התקנת Windows", optBackup:"גיבוי ושחזור", optOther:"אחר", submitBtn:"שליחה", successMsg:"תודה! קיבלנו את פנייתך ונחזור אליך בהקדם.", footerText:"2025 Lior IT Services" },
-      en: { dir:"ltr", lang:"עב", tagline:"Fast · Reliable · Personal", remoteBadge:"Remote support available now", heroTitle:'Certified & Experienced <span>IT Technician</span>', heroSub:"IT support for businesses & individuals · Repair, upgrade, remote support", heroBtn1:"Contact Us", heroBtn2:"View Services", servicesTitle:'Professional <span>Services</span>', s1t:"Remote Support", s1d:"Fast troubleshooting without a physical visit", s2t:"Computer Repair", s2d:"Hardware & software issues for all computer types", s3t:"Performance Boost", s3d:"Speed up slow computers and upgrade systems", s4t:"Backup & Recovery", s4d:"Data protection and file recovery", s5t:"Windows Install", s5d:"OS installation and upgrade", expTitle:'Professional <span>Experience</span>', e1c:"One Technologies", e1r:"Tier 1 Technical Support / IT Technician", e1b:"Remote Access · SysAid · AD · AnyDesk", e2c:"Ness Technologies", e2r:"Systems Trainer & Implementer", e2b:"Support · Training · Access Permissions", e3c:"John Bryce", e3r:"Systems Trainer & Implementer", e3b:"Microsoft 365 CRM · Tax Authority", e4c:"National Cyber Directorate", e4r:"Technology Assistant / Analyst", e4b:"Monitoring · Cyber Event Detection · Research", contactTitle:"Contact Us", contactSub:"Leave your details and I'll get back to you soon", quickTitle:"Prefer direct contact?", waBtn:"Send WhatsApp", areaText:"Center & South Israel", hoursText:"Sun-Thu 9:00-19:00 | Fri until Shabbat | Sat night from end of Shabbat", labelName:"Full Name *", labelPhone:"Phone *", labelCity:"City / Area", labelService:"Service Type", labelDesc:"Problem Description", optDefault:"Select service...", optRemote:"Remote Support", optRepair:"Computer Repair", optUpgrade:"Upgrade", optWindows:"Windows Install", optBackup:"Backup & Recovery", optOther:"Other", submitBtn:"Send", successMsg:"Thank you! We received your message and will get back to you soon.", footerText:"2025 Lior IT Services" }
+      he: { dir:"rtl", lang:"EN", tagline:"מהיר · אמין · אישי", remoteBadge:"השתלטות מרחוק זמינה עכשיו", heroTitle:'טכנאי מחשבים <span>מוסמך ומנוסה</span>', heroSub:"תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק", heroBtn1:"צרו קשר", heroBtn2:"צפייה בשירותים", servicesTitle:'<span>שירותים</span> מקצועיים', s1t:"השתלטות מרחוק", s1d:"פתרון תקלות מהיר ללא צורך בהגעה פיזית", s2t:"תיקון מחשבים", s2d:"תקלות חומרה ותוכנה לכל סוגי המחשבים", s3t:"שיפור ביצועים", s3d:"האצת מחשבים איטיים ושדרוג מערכות", s4t:"גיבוי ושחזור", s4d:"הגנה על המידע ושחזור קבצים שאבדו", s5t:"התקנת Windows", s5d:"התקנה ושדרוג מערכת הפעלה", expTitle:'<span>ניסיון</span> מקצועי', e1c:"One טכנולוגיות", e1r:"תומך טכני Tier 1 / טכנאי מחשבים", e1b:"השתלטות מרחוק · SysAid · AD · AnyDesk", e2c:"נס טכנולוגיות", e2r:"מטמיע ומדריך מערכות מידע", e2b:"תמיכה · הדרכה · הרשאות גישה", e3c:"ג'ון ברייס", e3r:"מטמיע ומדריך מערכות מידע", e3b:"Microsoft 365 CRM · רשות המיסים", e4c:"מערך הסייבר הלאומי", e4r:"עוזר טכנולוגי / אנליסט", e4b:"ניטור · זיהוי אירועי סייבר · מחקר", contactTitle:"צרו קשר", contactSub:"השאירו פרטים ואחזור אליכם בהקדם", quickTitle:"מעדיפים ישירות?", waBtn:"שלחו WhatsApp", areaText:"אזור המרכז והדרום", hoursText:'א\'-ה\' 9:00-19:00 | ו\' עד כניסת שבת | מוצ"ש מצאת השבת', labelName:"שם מלא *", labelPhone:"טלפון *", labelCity:"עיר / אזור", labelService:"סוג השירות", labelDesc:"תיאור הבעיה", optDefault:"בחר שירות...", optRemote:"השתלטות מרחוק", optRepair:"תיקון מחשב", optUpgrade:"שדרוג מחשב", optWindows:"התקנת Windows", optBackup:"גיבוי ושחזור", optOther:"אחר", submitBtn:"שליחה", successMsg:"תודה! קיבלנו את פנייתך ונחזור אליך בהקדם.", footerText:"© 2025 Lior IT Services · כל הזכויות שמורות" },
+      en: { dir:"ltr", lang:"עב", tagline:"Fast · Reliable · Personal", remoteBadge:"Remote support available now", heroTitle:'Certified & Experienced <span>IT Technician</span>', heroSub:"IT support for businesses & individuals · Repair, upgrade, remote support", heroBtn1:"Contact Us", heroBtn2:"View Services", servicesTitle:'Professional <span>Services</span>', s1t:"Remote Support", s1d:"Fast troubleshooting without a physical visit", s2t:"Computer Repair", s2d:"Hardware & software issues for all computer types", s3t:"Performance Boost", s3d:"Speed up slow computers and upgrade systems", s4t:"Backup & Recovery", s4d:"Data protection and file recovery", s5t:"Windows Install", s5d:"OS installation and upgrade", expTitle:'Professional <span>Experience</span>', e1c:"One Technologies", e1r:"Tier 1 Technical Support / IT Technician", e1b:"Remote Access · SysAid · AD · AnyDesk", e2c:"Ness Technologies", e2r:"Systems Trainer & Implementer", e2b:"Support · Training · Access Permissions", e3c:"John Bryce", e3r:"Systems Trainer & Implementer", e3b:"Microsoft 365 CRM · Tax Authority", e4c:"National Cyber Directorate", e4r:"Technology Assistant / Analyst", e4b:"Monitoring · Cyber Event Detection · Research", contactTitle:"Contact Us", contactSub:"Leave your details and I'll get back to you soon", quickTitle:"Prefer direct contact?", waBtn:"Send WhatsApp", areaText:"Center & South Israel", hoursText:"Sun-Thu 9:00-19:00 | Fri until Shabbat | Sat night after Shabbat", labelName:"Full Name *", labelPhone:"Phone *", labelCity:"City / Area", labelService:"Service Type", labelDesc:"Problem Description", optDefault:"Select service...", optRemote:"Remote Support", optRepair:"Computer Repair", optUpgrade:"Upgrade", optWindows:"Windows Install", optBackup:"Backup & Recovery", optOther:"Other", submitBtn:"Send", successMsg:"Thank you! We received your message and will get back to you soon.", footerText:"© 2025 Lior IT Services · All rights reserved" }
     };
-
     let cur = 'he';
     function toggleLang() {
-      cur = cur === 'he' ? 'en' : 'he';
+      cur = cur==='he' ? 'en' : 'he';
       const d = txt[cur];
       document.getElementById('site').dir = d.dir;
       document.documentElement.lang = cur;
