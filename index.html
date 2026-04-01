@@ -178,25 +178,33 @@
     .exp-section { padding: 3rem 2rem; background: #0a1932; width: 100%; }
     .exp-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
     .exp-section h2 span { color: #4a9eff; }
-    .exp-grid { display: flex; flex-direction: column; gap: 12px; max-width: 700px; margin: 0 auto; }
-    .exp-card {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px; padding: 1rem 1.25rem;
-      display: flex; align-items: center; gap: 16px; transition: background 0.2s;
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .exp-card:hover { background: rgba(255,255,255,0.09); }
+    .exp-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 14px; padding: 1.25rem 1rem;
+      text-align: center; transition: background 0.2s, transform 0.2s;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .exp-card:hover { background: rgba(74,158,255,0.08); transform: translateY(-3px); }
     .exp-logo {
-      width: 50px; height: 50px; border-radius: 10px;
+      width: 52px; height: 52px; border-radius: 12px;
       background: rgba(74,158,255,0.15); border: 1px solid rgba(74,158,255,0.3);
       display: flex; align-items: center; justify-content: center;
       font-size: 10px; font-weight: 700; color: #4a9eff;
-      flex-shrink: 0; text-align: center; line-height: 1.3;
+      text-align: center; line-height: 1.3; margin-bottom: 4px;
     }
-    .exp-info h3 { font-size: 15px; font-weight: 600; color: #fff; }
-    .exp-info p { font-size: 12px; color: #8ab4d4; margin-top: 2px; }
+    .exp-info h3 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+    .exp-info p { font-size: 11px; color: #8ab4d4; }
     .exp-badge {
-      display: inline-block; font-size: 10px; padding: 3px 10px; border-radius: 10px;
-      background: rgba(74,158,255,0.12); color: #4a9eff; margin-top: 5px;
+      display: inline-block; font-size: 10px; padding: 3px 8px; border-radius: 10px;
+      background: rgba(74,158,255,0.12); color: #4a9eff; margin-top: 4px;
+      line-height: 1.6;
     }
 
     /* ── CONTACT ── */
