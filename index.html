@@ -335,20 +335,28 @@
       max-width: 900px;
       margin: 0 auto 2rem;
     }
+    .footer-col { text-align: center; }
     .footer-col h4 { font-size: 13px; font-weight: 600; color: #4a9eff; margin-bottom: 0.75rem; letter-spacing: 0.5px; }
     .footer-col p, .footer-col a {
       font-size: 12px; color: #8ab4d4; line-height: 2;
       text-decoration: none; display: block;
     }
     .footer-col a:hover { color: #4a9eff; }
-    .footer-social { display: flex; gap: 12px; margin-top: 0.5rem; }
+    .footer-social { display: flex; gap: 16px; margin-top: 0.75rem; flex-wrap: wrap; justify-content: center; }
     .footer-social a {
-      width: 34px; height: 34px; border-radius: 8px;
+      display: flex; flex-direction: column; align-items: center; gap: 5px;
+      text-decoration: none; transition: transform 0.2s;
+      min-width: 52px;
+    }
+    .footer-social a:hover { transform: translateY(-3px); }
+    .social-icon {
+      width: 42px; height: 42px; border-radius: 10px;
       background: rgba(74,158,255,0.1); border: 1px solid rgba(74,158,255,0.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px; text-decoration: none; transition: background 0.2s;
+      font-size: 18px; transition: background 0.2s;
     }
-    .footer-social a:hover { background: rgba(74,158,255,0.25); }
+    .footer-social a:hover .social-icon { background: rgba(74,158,255,0.25); }
+    .social-label { font-size: 10px; color: #8ab4d4; text-align: center; }
     .footer-bottom {
       text-align: center;
       padding-top: 1.25rem;
@@ -509,7 +517,7 @@
           <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           <span id="waBtn">שלחו WhatsApp</span>
         </a>
-        <div class="info-item"><span class="info-icon">📧</span><span><a href="/cdn-cgi/l/email-protection#95f6fafbe1f4f6e1d5f9fcfae7b8fce1bbf6faf8" style="color:#4a9eff;text-decoration:none;"><span class="__cf_email__" data-cfemail="e3808c8d97828097a38f8a8c91ce8a97cd808c8e">[email&#160;protected]</span></a></span></div>
+        <div class="info-item"><span class="info-icon">📧</span><span><a href="mailto:contact@lior-it.com" style="color:#4a9eff;text-decoration:none;">contact@lior-it.com</a></span></div>
         <div class="info-item"><span class="info-icon">📍</span><span id="areaText">אזור המרכז והדרום</span></div>
         <div class="info-item"><span class="info-icon">⏰</span><span id="hoursText">א'-ה' 9:00-19:00 | ו' עד כניסת שבת | מוצ"ש מצאת השבת</span></div>
       </div>
@@ -551,10 +559,22 @@
         <p>טכנאי מחשבים מוסמך</p>
         <p>תיקון · שדרוג · תמיכה מרחוק</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/lior-mahfoda/" target="_blank" title="LinkedIn">💼</a>
-          <a href="https://www.tiktok.com/@lior_it_services" target="_blank" title="TikTok">🎵</a>
-          <a href="https://wa.me/972549215862" target="_blank" title="WhatsApp">💬</a>
-          <a href="https://github.com/LiorMahfoda" target="_blank" title="GitHub">💻</a>
+          <a href="https://www.linkedin.com/in/lior-mahfoda/" target="_blank">
+            <span class="social-icon">💼</span>
+            <span class="social-label">LinkedIn</span>
+          </a>
+          <a href="https://www.tiktok.com/@lior_it_services" target="_blank">
+            <span class="social-icon">🎵</span>
+            <span class="social-label">TikTok</span>
+          </a>
+          <a href="https://wa.me/972549215862" target="_blank">
+            <span class="social-icon">💬</span>
+            <span class="social-label">WhatsApp</span>
+          </a>
+          <a href="https://github.com/LiorMahfoda" target="_blank">
+            <span class="social-icon">💻</span>
+            <span class="social-label">GitHub</span>
+          </a>
         </div>
       </div>
       <div class="footer-col">
@@ -567,7 +587,7 @@
       <div class="footer-col">
         <h4 id="footerContactTitle">יצירת קשר</h4>
         <a href="tel:0549215862">054-921-5862</a>
-        <a href="mailto:contact@lior-it.com">contact@lior-it.com</a>
+        <a href="mailto:contact@lior-it.com" style="color:#8ab4d4;">contact@lior-it.com</a>
         <a href="https://lior-it.com">lior-it.com</a>
       </div>
     </div>
@@ -576,7 +596,7 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const form = document.getElementById('contactForm');
     const successBox = document.getElementById('formSuccess');
     const errorMsg = document.getElementById('formError');
@@ -630,10 +650,4 @@
     }
 
     // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
-</body>
-</html>
+    const observer = new IntersectionObserve
