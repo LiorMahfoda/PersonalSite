@@ -441,7 +441,7 @@
         <div class="tagline" id="tagline">מהיר · אמין · אישי</div>
       </div>
     </div>
-    <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()" ontouchend="toggleLang();event.preventDefault()">EN</button>
   </nav>
 
   <!-- HERO BLOCK -->
@@ -651,7 +651,11 @@
         how3t:"Fix & Payment", how3d:"Problem solved, I explain what was done and pricing is based on your specific need" }
     };
     let cur = 'he';
+    let _langLock = false;
     function toggleLang() {
+      if (_langLock) return;
+      _langLock = true;
+      setTimeout(() => _langLock = false, 300);
       cur = cur==='he' ? 'en' : 'he';
       const d = txt[cur];
       document.getElementById('site').dir = d.dir;
