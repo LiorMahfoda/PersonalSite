@@ -109,6 +109,7 @@
       width: 100%;
       background: #0f2744;
       border-bottom: 2px solid rgba(74,158,255,0.15);
+      scroll-margin-top: 70px;
     }
 
     /* אזור הלוגו — גובה קבוע, לוגו ממלא אותו */
@@ -431,7 +432,116 @@
   </style>
 </head>
 <body id="site" dir="rtl">
+<!-- ===== STICKY NAV ===== -->
+<style>
+  #site-header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,0.07);direction:rtl}
+  .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:62px}
+  .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:16px;font-weight:700;color:#111}
+  .site-logo img{height:36px;width:36px;border-radius:8px;object-fit:cover}
+  .desktop-nav{display:flex;align-items:center;gap:4px}
+  .n-link{font-size:14px;color:#555;text-decoration:none;padding:6px 12px;border-radius:8px;transition:background .15s,color .15s;cursor:pointer;border:none;background:none;font-family:inherit;display:flex;align-items:center;gap:5px}
+  .n-link:hover{background:#f2f2f2;color:#111}
+  .n-link.cta{background:#1A56A0;color:#fff!important;font-weight:700;padding:7px 16px;border-radius:8px}
+  .n-link.cta:hover{background:#154888}
+  .svc-wrap{position:relative}
+  .chevron{font-size:10px;display:inline-block;transition:transform .2s}
+  .svc-wrap.open .chevron{transform:rotate(180deg)}
+  .dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:1px solid #e0e0e0;border-radius:12px;min-width:250px;padding:6px;box-shadow:0 8px 28px rgba(0,0,0,.10);z-index:1000}
+  .svc-wrap.open .dropdown{display:block}
+  .d-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:#111;font-size:14px;transition:background .12s;direction:rtl}
+  .d-item:hover{background:#f4f4f4}
+  .d-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+  .d-lbl{display:flex;flex-direction:column;line-height:1.4}
+  .d-lbl small{font-size:11px;color:#999}
+  .d-sep{height:1px;background:#f0f0f0;margin:4px 0}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
+  .hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
+  .mob-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid #eee;padding:8px 1rem 1rem}
+  .mob-menu.open{display:flex}
+  .m-link{font-size:15px;color:#111;padding:11px 10px;border-radius:8px;text-decoration:none;display:block;direction:rtl;text-align:right}
+  .m-link:hover{background:#f4f4f4}
+  .m-svc-btn{width:100%;text-align:right;background:none;border:none;font-size:15px;color:#111;padding:11px 10px;cursor:pointer;border-radius:8px;display:flex;justify-content:space-between;align-items:center;font-family:inherit}
+  .m-svc-btn:hover{background:#f4f4f4}
+  .m-sub{display:none;flex-direction:column;padding-right:16px}
+  .m-sub.open{display:flex}
+  .m-sub-item{font-size:14px;color:#555;padding:9px 10px;border-radius:8px;text-decoration:none;display:flex;align-items:center;gap:8px;direction:rtl}
+  .m-sub-item:hover{background:#f4f4f4;color:#111}
+  .m-cta{background:#1A56A0!important;color:#fff!important;text-align:center!important;font-weight:700;margin-top:8px;border-radius:8px}
+  @media(max-width:640px){.desktop-nav{display:none}.hamburger{display:flex}}
+</style>
 
+<header id="site-header">
+  <div class="nav-inner">
+    <a class="site-logo" href="/">
+      <img src="Lior_IT_Buisness.png" alt="Lior IT Services לוגו">
+      Lior IT Services
+    </a>
+    <nav class="desktop-nav" role="navigation" aria-label="ניווט ראשי">
+      <a class="n-link" href="#hero">דף הבית</a>
+      <div class="svc-wrap" id="svcWrap">
+        <button class="n-link" id="svcBtn" aria-haspopup="true" aria-expanded="false">
+          שירותים <span class="chevron">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a class="d-item" href="#services" role="menuitem">
+            <div class="d-icon" style="background:#EBF3FC">💻</div>
+            <div class="d-lbl">השתלטות מרחוק<small>Remote Support</small></div>
+          </a>
+          <a class="d-item" href="#services" role="menuitem">
+            <div class="d-icon" style="background:#E8F5EC">🔧</div>
+            <div class="d-lbl">תיקון מחשבים<small>Computer Repair</small></div>
+          </a>
+          <a class="d-item" href="#services" role="menuitem">
+            <div class="d-icon" style="background:#FFF3E0">⚡</div>
+            <div class="d-lbl">שדרוג חומרה ו-SSD<small>Hardware & SSD Upgrades</small></div>
+          </a>
+          <a class="d-item" href="#services" role="menuitem">
+            <div class="d-icon" style="background:#F3E8FD">🖥️</div>
+            <div class="d-lbl">התקנת Windows ותוכנה<small>OS & Software Installation</small></div>
+          </a>
+          <div class="d-sep"></div>
+          <a class="d-item" href="#services" role="menuitem">
+            <div class="d-icon" style="background:#FCE8EC">💾</div>
+            <div class="d-lbl">גיבוי ושחזור מידע<small>Data Backup & Recovery</small></div>
+          </a>
+          <a class="d-item" href="#services" role="menuitem">
+            <div class="d-icon" style="background:#E1F5EE">🛡️</div>
+            <div class="d-lbl">אבטחת סייבר ביתית<small>Home Cybersecurity</small></div>
+          </a>
+          <a class="d-item" href="#services" role="menuitem">
+            <div class="d-icon" style="background:#EBF4FF">🌐</div>
+            <div class="d-lbl">הגדרת רשתות ו-Wi-Fi<small>Network & Wi-Fi Setup</small></div>
+          </a>
+        </div>
+      </div>
+      <a class="n-link" href="#experience">למה אני?</a>
+      <a class="n-link" href="#how">איך זה עובד?</a>
+      <a class="n-link cta" href="#contact">צור קשר</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="פתח תפריט">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mob-menu" id="mobMenu">
+    <a class="m-link" href="#hero">דף הבית</a>
+    <button class="m-svc-btn" id="mSvcBtn">שירותים <span class="chevron" id="mChev">▾</span></button>
+    <div class="m-sub" id="mSub">
+      <a class="m-sub-item" href="#services">💻 השתלטות מרחוק</a>
+      <a class="m-sub-item" href="#services">🔧 תיקון מחשבים</a>
+      <a class="m-sub-item" href="#services">⚡ שדרוג חומרה ו-SSD</a>
+      <a class="m-sub-item" href="#services">🖥️ התקנת Windows ותוכנה</a>
+      <a class="m-sub-item" href="#services">💾 גיבוי ושחזור מידע</a>
+      <a class="m-sub-item" href="#services">🛡️ אבטחת סייבר ביתית</a>
+      <a class="m-sub-item" href="#services">🌐 הגדרת רשתות ו-Wi-Fi</a>
+    </div>
+    <a class="m-link" href="#experience">למה אני?</a>
+    <a class="m-link" href="#how">איך זה עובד?</a>
+    <a class="m-link m-cta" href="#contact">צור קשר</a>
+  </div>
+</header>
+<!-- ===== END STICKY NAV ===== -->
   <!-- NAV -->
   <nav>
     <div class="logo-area">
@@ -679,5 +789,21 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
+<script>
+  (function(){
+    var wrap=document.getElementById('svcWrap'),btn=document.getElementById('svcBtn'),
+            ham=document.getElementById('hamburger'),mob=document.getElementById('mobMenu'),
+            ms=document.getElementById('mSvcBtn'),sub=document.getElementById('mSub'),
+            mch=document.getElementById('mChev');
+    btn.addEventListener('click',function(e){e.stopPropagation();var o=wrap.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
+    document.addEventListener('click',function(e){if(!wrap.contains(e.target)){wrap.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){wrap.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+    ham.addEventListener('click',function(){mob.classList.toggle('open');});
+    ms.addEventListener('click',function(){var o=sub.classList.toggle('open');mch.style.transform=o?'rotate(180deg)':'';});
+    // Close mobile menu on any link click
+    mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');});});
+  })();
+</script>
+
 </body>
 </html>
