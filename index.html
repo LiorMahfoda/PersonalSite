@@ -13,7 +13,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lior-it.com/" />
 
-  <!-- ═══ Open Graph — תצוגה בווטסאפ / פייסבוק / לינקדאין ═══ -->
+  <!-- ═══ Open Graph ═══ -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lior-it.com/" />
   <meta property="og:title" content="Lior IT Services | טכנאי מחשבים מוסמך" />
@@ -30,7 +30,7 @@
   <meta name="twitter:description" content="תיקון מחשבים, שדרוג, השתלטות מרחוק — 054-921-5862" />
   <meta name="twitter:image" content="https://lior-it.com/Lior_IT_Buisness.png" />
 
-  <!-- ═══ Schema.org — מידע עסקי לגוגל ═══ -->
+  <!-- ═══ Schema.org ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,7 +48,7 @@
   }
   </script>
 
-  <!-- ═══ Google Analytics — כשתקבל מזהה, הסר את ה-comment ═══
+  <!-- ═══ Google Analytics — הסר comment כשתקבל מזהה
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -58,61 +58,264 @@
   </script>
   ═══ -->
 
-  <!-- כפתור WhatsApp צף -->
-  <a class="wa-float" href="https://wa.me/972549215862" target="_blank" aria-label="שלחו WhatsApp">
-    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-  <div class="wa-float-tooltip">שלחו הודעה עכשיו</div>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { width: 100%; overflow-x: hidden; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1932; color: #fff; }
 
-    /* ── NAV ── */
-    nav {
-      background: #0f2744;
-      padding: 0 1rem;
-      display: flex; align-items: center; justify-content: space-between;
+    /* ══════════════════════════════════════════
+       STICKY HEADER + DROPDOWN NAV
+    ══════════════════════════════════════════ */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+      background: #0b1e3d;
+      border-bottom: 1px solid rgba(74,158,255,0.25);
+      direction: rtl;
+      width: 100%;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
       height: 64px;
-      border-bottom: 1px solid rgba(74,158,255,0.3);
-      position: sticky; top: 0; z-index: 100;
-      width: 100%; box-sizing: border-box;
       gap: 8px;
     }
-    .logo-area {
-      display: flex; align-items: center; gap: 8px;
-      flex: 1; min-width: 0; overflow: hidden;
+
+    /* Logo */
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
     }
-    .logo-area img { height: 38px; width: auto; border-radius: 6px; flex-shrink: 0; }
+    .site-logo img {
+      height: 38px;
+      width: auto;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
     .logo-text { min-width: 0; overflow: hidden; }
-    .logo-text .brand { font-size: 15px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logo-text .brand {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     .logo-text .brand span { color: #4a9eff; }
-    .logo-text .tagline { font-size: 9px; color: #8ab4d4; letter-spacing: 1px; white-space: nowrap; }
+    .logo-text .tagline {
+      font-size: 9px;
+      color: #8ab4d4;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    /* Desktop nav links */
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+    .n-link {
+      font-size: 14px;
+      color: #8ab4d4;
+      text-decoration: none;
+      padding: 6px 11px;
+      border-radius: 8px;
+      transition: background .15s, color .15s;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .n-link:hover { background: rgba(74,158,255,0.12); color: #fff; }
+    .n-link.cta {
+      background: #4a9eff;
+      color: #0f2744 !important;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 20px;
+      margin-right: 4px;
+    }
+    .n-link.cta:hover { background: #6ab4ff; }
+
+    /* Lang button */
     .lang-btn {
-      background: transparent; border: 1.5px solid #4a9eff; color: #4a9eff;
-      padding: 7px 16px; border-radius: 20px; cursor: pointer;
-      font-size: 13px; font-weight: 700; transition: all 0.2s;
+      background: transparent;
+      border: 1.5px solid #4a9eff;
+      color: #4a9eff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s;
       flex-shrink: 0;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
-      min-width: 52px; text-align: center;
+      min-width: 48px;
+      text-align: center;
+      font-family: inherit;
     }
     .lang-btn:hover, .lang-btn:active { background: #4a9eff; color: #0f2744; }
 
-    /* ── HERO BLOCK ──
-       מבנה: קונטיינר גמיש אנכי.
-       חצי עליון = לוגו ברקע (position relative, גובה קבוע).
-       חצי תחתון = טקסט וכפתורים (בלוק רגיל, מתחת).
-       אין overlap בכלל.
-    */
+    /* Services dropdown */
+    .svc-wrap { position: relative; }
+    .chevron {
+      font-size: 10px;
+      display: inline-block;
+      transition: transform .2s;
+    }
+    .svc-wrap.open .chevron { transform: rotate(180deg); }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background: #0f2744;
+      border: 1px solid rgba(74,158,255,0.3);
+      border-radius: 14px;
+      min-width: 255px;
+      padding: 6px;
+      box-shadow: 0 12px 36px rgba(0,0,0,.45);
+      z-index: 1002;
+    }
+    .svc-wrap.open .dropdown { display: block; }
+    .d-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #e0eaf6;
+      font-size: 14px;
+      transition: background .12s;
+      direction: rtl;
+    }
+    .d-item:hover { background: rgba(74,158,255,0.12); color: #fff; }
+    .d-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+    .d-lbl { display: flex; flex-direction: column; line-height: 1.4; }
+    .d-lbl small { font-size: 11px; color: #5a8ab4; }
+    .d-sep { height: 1px; background: rgba(74,158,255,0.15); margin: 4px 0; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      border: none;
+      background: none;
+      flex-shrink: 0;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #8ab4d4;
+      border-radius: 2px;
+      transition: all .2s;
+    }
+
+    /* Mobile menu */
+    .mob-menu {
+      display: none;
+      flex-direction: column;
+      background: #0b1e3d;
+      border-top: 1px solid rgba(74,158,255,0.2);
+      padding: 8px 1rem 1rem;
+    }
+    .mob-menu.open { display: flex; }
+    .m-link {
+      font-size: 15px;
+      color: #c8dff5;
+      padding: 11px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: block;
+      direction: rtl;
+      text-align: right;
+    }
+    .m-link:hover { background: rgba(74,158,255,0.1); color: #fff; }
+    .m-svc-btn {
+      width: 100%;
+      text-align: right;
+      background: none;
+      border: none;
+      font-size: 15px;
+      color: #c8dff5;
+      padding: 11px 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: inherit;
+    }
+    .m-svc-btn:hover { background: rgba(74,158,255,0.1); color: #fff; }
+    .m-sub { display: none; flex-direction: column; padding-right: 14px; }
+    .m-sub.open { display: flex; }
+    .m-sub-item {
+      font-size: 14px;
+      color: #7aadd4;
+      padding: 9px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      direction: rtl;
+    }
+    .m-sub-item:hover { background: rgba(74,158,255,0.1); color: #fff; }
+    .m-cta {
+      background: #4a9eff !important;
+      color: #0f2744 !important;
+      text-align: center !important;
+      font-weight: 700;
+      margin-top: 8px;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 720px) {
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .lang-btn { min-width: 44px; padding: 6px 10px; }
+    }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
     .hero-block {
       width: 100%;
       background: #0f2744;
       border-bottom: 2px solid rgba(74,158,255,0.15);
       scroll-margin-top: 70px;
     }
-
-    /* אזור הלוגו — גובה קבוע, לוגו ממלא אותו */
     .hero-logo {
       width: 100%;
       height: 220px;
@@ -129,8 +332,6 @@
       opacity: 0.85;
       filter: brightness(1.3) saturate(1.1);
     }
-
-    /* אזור הטקסט — מתחת לאזור הלוגו, נפרד לחלוטין */
     .hero-text {
       width: 100%;
       background: rgba(5, 15, 40, 0.85);
@@ -166,8 +367,10 @@
     }
     .btn-secondary:hover { background: rgba(255,255,255,0.08); }
 
-    /* ── SERVICES ── */
-    .services-section { padding: 3rem 2rem; background: #112d55; width: 100%; }
+    /* ══════════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════════ */
+    .services-section { padding: 3rem 2rem; background: #112d55; width: 100%; scroll-margin-top: 70px; }
     .services-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
     .services-section h2 span { color: #4a9eff; }
     .services-grid {
@@ -186,8 +389,10 @@
     .remote-card { border-color: rgba(74,158,255,0.5); background: rgba(74,158,255,0.08); }
     .remote-card h3 { color: #4a9eff; }
 
-    /* ── EXPERIENCE ── */
-    .exp-section { padding: 3rem 2rem; background: #0d2240; width: 100%; }
+    /* ══════════════════════════════════════════
+       EXPERIENCE
+    ══════════════════════════════════════════ */
+    .exp-section { padding: 3rem 2rem; background: #0d2240; width: 100%; scroll-margin-top: 70px; }
     .exp-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
     .exp-section h2 span { color: #4a9eff; }
     .exp-quote-wrap {
@@ -196,29 +401,71 @@
       border-right: 3px solid #4a9eff;
       padding-right: 1.5rem;
     }
-    .exp-quote {
-      font-size: 17px;
-      color: #fff;
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-    }
+    .exp-quote { font-size: 17px; color: #fff; line-height: 1.8; margin-bottom: 1.25rem; }
     .exp-quote span { color: #4a9eff; font-weight: 600; }
-    .exp-orgs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+    .exp-orgs { display: flex; flex-wrap: wrap; gap: 10px; }
     .exp-orgs span {
-      font-size: 12px;
-      color: #8ab4d4;
-      background: rgba(74,158,255,0.08);
-      border: 1px solid rgba(74,158,255,0.2);
-      padding: 4px 14px;
-      border-radius: 20px;
+      font-size: 12px; color: #8ab4d4;
+      background: rgba(74,158,255,0.08); border: 1px solid rgba(74,158,255,0.2);
+      padding: 4px 14px; border-radius: 20px;
     }
 
-    /* ── CONTACT ── */
-    .contact-section { background: #0f2744; padding: 3.5rem 2rem; border-top: 1px solid rgba(74,158,255,0.2); width: 100%; }
+    /* ══════════════════════════════════════════
+       HOW IT WORKS
+    ══════════════════════════════════════════ */
+    .how-section {
+      padding: 3rem 2rem;
+      background: #0a1932;
+      border-top: 1px solid rgba(74,158,255,0.15);
+      width: 100%;
+      scroll-margin-top: 70px;
+    }
+    .how-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 2rem; text-align: center; }
+    .how-section h2 span { color: #4a9eff; }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .how-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      position: relative;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .how-card:hover { background: rgba(74,158,255,0.08); transform: translateY(-4px); }
+    .how-num {
+      position: absolute;
+      top: -14px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 28px; height: 28px;
+      background: #4a9eff;
+      color: #0f2744;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .how-icon { font-size: 36px; margin-bottom: 0.75rem; margin-top: 0.5rem; }
+    .how-card h3 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+    .how-card p { font-size: 13px; color: #8ab4d4; line-height: 1.6; }
+
+    /* ══════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════ */
+    .contact-section {
+      background: #0f2744;
+      padding: 3.5rem 2rem;
+      border-top: 1px solid rgba(74,158,255,0.2);
+      width: 100%;
+      scroll-margin-top: 70px;
+    }
     .contact-section h2 { color: #fff; font-size: 24px; font-weight: 600; margin-bottom: 0.5rem; text-align: center; }
     .contact-section .subtitle { color: #8ab4d4; font-size: 14px; margin-bottom: 2rem; text-align: center; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 900px; margin: 0 auto; align-items: start; }
@@ -259,83 +506,9 @@
     .form-success { display: none; text-align: center; padding: 2rem; background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3); border-radius: 14px; color: #25D366; font-size: 16px; font-weight: 600; }
     .form-error { display: none; font-size: 12px; color: #ff6b6b; margin-top: 8px; text-align: center; }
 
-    footer { background: #060e1f; text-align: center; padding: 1.25rem; color: #8ab4d4; font-size: 12px; width: 100%; }
-
-    /* ── HOW IT WORKS ── */
-    .how-section {
-      padding: 3rem 2rem;
-      background: #0a1932;
-      border-top: 1px solid rgba(74,158,255,0.15);
-      width: 100%;
-    }
-    .how-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 2rem; text-align: center; }
-    .how-section h2 span { color: #4a9eff; }
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-    .how-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(74,158,255,0.2);
-      border-radius: 16px;
-      padding: 1.75rem 1.5rem;
-      text-align: center;
-      position: relative;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .how-card:hover { background: rgba(74,158,255,0.08); transform: translateY(-4px); }
-    .how-num {
-      position: absolute;
-      top: -14px;
-      right: 50%;
-      transform: translateX(50%);
-      width: 28px; height: 28px;
-      background: #4a9eff;
-      color: #0f2744;
-      border-radius: 50%;
-      font-size: 13px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .how-icon { font-size: 36px; margin-bottom: 0.75rem; margin-top: 0.5rem; }
-    .how-card h3 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
-    .how-card p { font-size: 13px; color: #8ab4d4; line-height: 1.6; }
-
-    [dir="rtl"] { direction: rtl; }
-    [dir="ltr"] { direction: ltr; }
-
-    /* ── SCROLL ANIMATIONS ── */
-    .fade-in {
-      opacity: 1;
-      transform: none;
-    }
-    .js-ready .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-    .js-ready .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .js-ready .fade-in:nth-child(2) { transition-delay: 0.1s; }
-    .js-ready .fade-in:nth-child(3) { transition-delay: 0.2s; }
-    .js-ready .fade-in:nth-child(4) { transition-delay: 0.3s; }
-    .js-ready .fade-in:nth-child(5) { transition-delay: 0.4s; }
-
-    /* ── AVAILABILITY BADGE ── */
-    .avail-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.35);
-      color: #25D366; padding: 4px 12px; border-radius: 14px;
-      font-size: 11px; font-weight: 600; margin-top: 6px;
-    }
-    .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: #25D366; animation: pulse 1.5s infinite; }
-
-    /* ── FOOTER ── */
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
     footer {
       background: #040c1a;
       padding: 2.5rem 2rem 1.5rem;
@@ -377,7 +550,9 @@
       font-size: 11px; color: #4a6080;
     }
 
-    /* ── כפתור WhatsApp צף ── */
+    /* ══════════════════════════════════════════
+       FLOATING WHATSAPP BUTTON
+    ══════════════════════════════════════════ */
     .wa-float {
       position: fixed;
       bottom: 28px;
@@ -390,7 +565,7 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 16px rgba(37,211,102,0.5);
-      z-index: 999;
+      z-index: 1000;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
       animation: wa-pulse 2.5s infinite;
@@ -414,13 +589,42 @@
       padding: 6px 14px;
       border-radius: 20px;
       white-space: nowrap;
-      z-index: 998;
+      z-index: 999;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.2s;
       border: 1px solid rgba(74,158,255,0.3);
     }
     .wa-float:hover + .wa-float-tooltip { opacity: 1; }
+
+    /* ══════════════════════════════════════════
+       AVAILABILITY BADGE
+    ══════════════════════════════════════════ */
+    .avail-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.35);
+      color: #25D366; padding: 4px 12px; border-radius: 14px;
+      font-size: 11px; font-weight: 600; margin-top: 6px;
+    }
+    .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: #25D366; animation: pulse 1.5s infinite; }
+
+    /* ══════════════════════════════════════════
+       SCROLL ANIMATIONS
+    ══════════════════════════════════════════ */
+    .fade-in { opacity: 1; transform: none; }
+    .js-ready .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .js-ready .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .js-ready .fade-in:nth-child(2) { transition-delay: 0.1s; }
+    .js-ready .fade-in:nth-child(3) { transition-delay: 0.2s; }
+    .js-ready .fade-in:nth-child(4) { transition-delay: 0.3s; }
+    .js-ready .fade-in:nth-child(5) { transition-delay: 0.4s; }
+
+    [dir="rtl"] { direction: rtl; }
+    [dir="ltr"] { direction: ltr; }
 
     @media (max-width: 680px) {
       .hero-logo { height: 200px; }
@@ -432,137 +636,109 @@
   </style>
 </head>
 <body id="site" dir="rtl">
-<!-- ===== STICKY NAV ===== -->
-<style>
-  #site-header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,0.07);direction:rtl}
-  .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:62px}
-  .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:16px;font-weight:700;color:#111}
-  .site-logo img{height:36px;width:36px;border-radius:8px;object-fit:cover}
-  .desktop-nav{display:flex;align-items:center;gap:4px}
-  .n-link{font-size:14px;color:#555;text-decoration:none;padding:6px 12px;border-radius:8px;transition:background .15s,color .15s;cursor:pointer;border:none;background:none;font-family:inherit;display:flex;align-items:center;gap:5px}
-  .n-link:hover{background:#f2f2f2;color:#111}
-  .n-link.cta{background:#1A56A0;color:#fff!important;font-weight:700;padding:7px 16px;border-radius:8px}
-  .n-link.cta:hover{background:#154888}
-  .svc-wrap{position:relative}
-  .chevron{font-size:10px;display:inline-block;transition:transform .2s}
-  .svc-wrap.open .chevron{transform:rotate(180deg)}
-  .dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:1px solid #e0e0e0;border-radius:12px;min-width:250px;padding:6px;box-shadow:0 8px 28px rgba(0,0,0,.10);z-index:1000}
-  .svc-wrap.open .dropdown{display:block}
-  .d-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:#111;font-size:14px;transition:background .12s;direction:rtl}
-  .d-item:hover{background:#f4f4f4}
-  .d-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
-  .d-lbl{display:flex;flex-direction:column;line-height:1.4}
-  .d-lbl small{font-size:11px;color:#999}
-  .d-sep{height:1px;background:#f0f0f0;margin:4px 0}
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
-  .hamburger span{display:block;width:22px;height:2px;background:#333;border-radius:2px}
-  .mob-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid #eee;padding:8px 1rem 1rem}
-  .mob-menu.open{display:flex}
-  .m-link{font-size:15px;color:#111;padding:11px 10px;border-radius:8px;text-decoration:none;display:block;direction:rtl;text-align:right}
-  .m-link:hover{background:#f4f4f4}
-  .m-svc-btn{width:100%;text-align:right;background:none;border:none;font-size:15px;color:#111;padding:11px 10px;cursor:pointer;border-radius:8px;display:flex;justify-content:space-between;align-items:center;font-family:inherit}
-  .m-svc-btn:hover{background:#f4f4f4}
-  .m-sub{display:none;flex-direction:column;padding-right:16px}
-  .m-sub.open{display:flex}
-  .m-sub-item{font-size:14px;color:#555;padding:9px 10px;border-radius:8px;text-decoration:none;display:flex;align-items:center;gap:8px;direction:rtl}
-  .m-sub-item:hover{background:#f4f4f4;color:#111}
-  .m-cta{background:#1A56A0!important;color:#fff!important;text-align:center!important;font-weight:700;margin-top:8px;border-radius:8px}
-  @media(max-width:640px){.desktop-nav{display:none}.hamburger{display:flex}}
-</style>
 
-<header id="site-header">
-  <div class="nav-inner">
-    <a class="site-logo" href="/">
-      <img src="Lior_IT_Buisness.png" alt="Lior IT Services לוגו">
-      Lior IT Services
-    </a>
-    <nav class="desktop-nav" role="navigation" aria-label="ניווט ראשי">
-      <a class="n-link" href="#hero">דף הבית</a>
-      <div class="svc-wrap" id="svcWrap">
-        <button class="n-link" id="svcBtn" aria-haspopup="true" aria-expanded="false">
-          שירותים <span class="chevron">▾</span>
-        </button>
-        <div class="dropdown" role="menu">
-          <a class="d-item" href="#services" role="menuitem">
-            <div class="d-icon" style="background:#EBF3FC">💻</div>
-            <div class="d-lbl">השתלטות מרחוק<small>Remote Support</small></div>
-          </a>
-          <a class="d-item" href="#services" role="menuitem">
-            <div class="d-icon" style="background:#E8F5EC">🔧</div>
-            <div class="d-lbl">תיקון מחשבים<small>Computer Repair</small></div>
-          </a>
-          <a class="d-item" href="#services" role="menuitem">
-            <div class="d-icon" style="background:#FFF3E0">⚡</div>
-            <div class="d-lbl">שדרוג חומרה ו-SSD<small>Hardware & SSD Upgrades</small></div>
-          </a>
-          <a class="d-item" href="#services" role="menuitem">
-            <div class="d-icon" style="background:#F3E8FD">🖥️</div>
-            <div class="d-lbl">התקנת Windows ותוכנה<small>OS & Software Installation</small></div>
-          </a>
-          <div class="d-sep"></div>
-          <a class="d-item" href="#services" role="menuitem">
-            <div class="d-icon" style="background:#FCE8EC">💾</div>
-            <div class="d-lbl">גיבוי ושחזור מידע<small>Data Backup & Recovery</small></div>
-          </a>
-          <a class="d-item" href="#services" role="menuitem">
-            <div class="d-icon" style="background:#E1F5EE">🛡️</div>
-            <div class="d-lbl">אבטחת סייבר ביתית<small>Home Cybersecurity</small></div>
-          </a>
-          <a class="d-item" href="#services" role="menuitem">
-            <div class="d-icon" style="background:#EBF4FF">🌐</div>
-            <div class="d-lbl">הגדרת רשתות ו-Wi-Fi<small>Network & Wi-Fi Setup</small></div>
-          </a>
+  <!-- ══════════════════════════════════════════
+       FLOATING WHATSAPP
+  ══════════════════════════════════════════ -->
+  <a class="wa-float" href="https://wa.me/972549215862" target="_blank" aria-label="שלחו WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <div class="wa-float-tooltip">שלחו הודעה עכשיו</div>
+
+  <!-- ══════════════════════════════════════════
+       STICKY HEADER
+  ══════════════════════════════════════════ -->
+  <header id="site-header">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a class="site-logo" href="/">
+        <img src="Lior_IT_Buisness.png" alt="Lior IT Services" />
+        <div class="logo-text">
+          <div class="brand">Lior <span>IT</span> Services</div>
+          <div class="tagline" id="tagline">מהיר · אמין · אישי</div>
         </div>
-      </div>
-      <a class="n-link" href="#experience">למה אני?</a>
-      <a class="n-link" href="#how">איך זה עובד?</a>
-      <a class="n-link cta" href="#contact">צור קשר</a>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="פתח תפריט">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+      </a>
 
-  <!-- Mobile menu -->
-  <div class="mob-menu" id="mobMenu">
-    <a class="m-link" href="#hero">דף הבית</a>
-    <button class="m-svc-btn" id="mSvcBtn">שירותים <span class="chevron" id="mChev">▾</span></button>
-    <div class="m-sub" id="mSub">
-      <a class="m-sub-item" href="#services">💻 השתלטות מרחוק</a>
-      <a class="m-sub-item" href="#services">🔧 תיקון מחשבים</a>
-      <a class="m-sub-item" href="#services">⚡ שדרוג חומרה ו-SSD</a>
-      <a class="m-sub-item" href="#services">🖥️ התקנת Windows ותוכנה</a>
-      <a class="m-sub-item" href="#services">💾 גיבוי ושחזור מידע</a>
-      <a class="m-sub-item" href="#services">🛡️ אבטחת סייבר ביתית</a>
-      <a class="m-sub-item" href="#services">🌐 הגדרת רשתות ו-Wi-Fi</a>
+      <!-- Desktop nav -->
+      <nav class="desktop-nav" role="navigation" aria-label="ניווט ראשי">
+        <a class="n-link" href="#hero">דף הבית</a>
+
+        <div class="svc-wrap" id="svcWrap">
+          <button class="n-link" id="svcBtn" aria-haspopup="true" aria-expanded="false">
+            שירותים <span class="chevron">▾</span>
+          </button>
+          <div class="dropdown" role="menu">
+            <a class="d-item" href="#services" role="menuitem">
+              <div class="d-icon" style="background:rgba(74,158,255,0.15)">💻</div>
+              <div class="d-lbl">השתלטות מרחוק<small>Remote Support</small></div>
+            </a>
+            <a class="d-item" href="#services" role="menuitem">
+              <div class="d-icon" style="background:rgba(74,200,100,0.15)">🔧</div>
+              <div class="d-lbl">תיקון מחשבים<small>Computer Repair</small></div>
+            </a>
+            <a class="d-item" href="#services" role="menuitem">
+              <div class="d-icon" style="background:rgba(255,180,50,0.15)">⚡</div>
+              <div class="d-lbl">שדרוג חומרה ו-SSD<small>Hardware & SSD Upgrades</small></div>
+            </a>
+            <a class="d-item" href="#services" role="menuitem">
+              <div class="d-icon" style="background:rgba(180,100,255,0.15)">🖥️</div>
+              <div class="d-lbl">התקנת Windows ותוכנה<small>OS & Software Installation</small></div>
+            </a>
+            <div class="d-sep"></div>
+            <a class="d-item" href="#services" role="menuitem">
+              <div class="d-icon" style="background:rgba(255,80,100,0.15)">💾</div>
+              <div class="d-lbl">גיבוי ושחזור מידע<small>Data Backup & Recovery</small></div>
+            </a>
+            <a class="d-item" href="#services" role="menuitem">
+              <div class="d-icon" style="background:rgba(37,211,102,0.15)">🛡️</div>
+              <div class="d-lbl">אבטחת סייבר ביתית<small>Home Cybersecurity</small></div>
+            </a>
+            <a class="d-item" href="#services" role="menuitem">
+              <div class="d-icon" style="background:rgba(74,158,255,0.12)">🌐</div>
+              <div class="d-lbl">הגדרת רשתות ו-Wi-Fi<small>Network & Wi-Fi Setup</small></div>
+            </a>
+          </div>
+        </div>
+
+        <a class="n-link" href="#experience">למה אני?</a>
+        <a class="n-link" href="#how">איך זה עובד?</a>
+        <a class="n-link cta" href="#contact">צור קשר</a>
+      </nav>
+
+      <!-- Lang toggle + hamburger -->
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()" ontouchend="toggleLang();event.preventDefault()">EN</button>
+      <button class="hamburger" id="hamburger" aria-label="פתח תפריט">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <a class="m-link" href="#experience">למה אני?</a>
-    <a class="m-link" href="#how">איך זה עובד?</a>
-    <a class="m-link m-cta" href="#contact">צור קשר</a>
-  </div>
-</header>
-<!-- ===== END STICKY NAV ===== -->
-  <!-- NAV -->
-  <nav>
-    <div class="logo-area">
-      <img src="Lior_IT_Buisness.png" alt="Lior IT Services" />
-      <div class="logo-text">
-        <div class="brand">Lior <span>IT</span> Services</div>
-        <div class="tagline" id="tagline">מהיר · אמין · אישי</div>
+
+    <!-- Mobile menu -->
+    <div class="mob-menu" id="mobMenu" role="navigation" aria-label="תפריט מובייל">
+      <a class="m-link" href="#hero">דף הבית</a>
+      <button class="m-svc-btn" id="mSvcBtn">שירותים <span class="chevron" id="mChev">▾</span></button>
+      <div class="m-sub" id="mSub">
+        <a class="m-sub-item" href="#services">💻 השתלטות מרחוק</a>
+        <a class="m-sub-item" href="#services">🔧 תיקון מחשבים</a>
+        <a class="m-sub-item" href="#services">⚡ שדרוג חומרה ו-SSD</a>
+        <a class="m-sub-item" href="#services">🖥️ התקנת Windows ותוכנה</a>
+        <a class="m-sub-item" href="#services">💾 גיבוי ושחזור מידע</a>
+        <a class="m-sub-item" href="#services">🛡️ אבטחת סייבר ביתית</a>
+        <a class="m-sub-item" href="#services">🌐 הגדרת רשתות ו-Wi-Fi</a>
       </div>
+      <a class="m-link" href="#experience">למה אני?</a>
+      <a class="m-link" href="#how">איך זה עובד?</a>
+      <a class="m-link m-cta" href="#contact">צור קשר</a>
     </div>
-    <button class="lang-btn" id="langBtn" onclick="toggleLang()" ontouchend="toggleLang();event.preventDefault()">EN</button>
-  </nav>
+  </header>
 
-  <!-- HERO BLOCK -->
-  <div class="hero-block">
-
-    <!-- חצי עליון: לוגו ברקע, גובה קבוע, שום טקסט עליו -->
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <div class="hero-block" id="hero">
     <div class="hero-logo">
       <img src="Lior_IT_Buisness.png" alt="" />
     </div>
-
-    <!-- חצי תחתון: טקסט וכפתורים, מתחת ללוגו, נפרד לגמרי -->
     <div class="hero-text">
       <div class="remote-badge">
         <div class="pulse"></div>
@@ -576,10 +752,11 @@
         <a class="btn-secondary" href="#services" id="heroBtn2">צפייה בשירותים</a>
       </div>
     </div>
-
   </div>
 
-  <!-- SERVICES -->
+  <!-- ══════════════════════════════════════════
+       SERVICES
+  ══════════════════════════════════════════ -->
   <section class="services-section" id="services">
     <h2 id="servicesTitle"><span>שירותים</span> מקצועיים</h2>
     <div class="services-grid">
@@ -591,8 +768,10 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="exp-section">
+  <!-- ══════════════════════════════════════════
+       EXPERIENCE
+  ══════════════════════════════════════════ -->
+  <section class="exp-section" id="experience">
     <h2 id="expTitle"><span>ניסיון</span> מקצועי</h2>
     <div class="exp-quote-wrap">
       <p class="exp-quote" id="expQuote">מהנדס תוכנה עם <span>B.Sc</span> וניסיון מעשי ב-<span>4 ארגונים</span>. מביא עומק טכנולוגי אמיתי לכל תקלה.</p>
@@ -605,8 +784,10 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="how-section">
+  <!-- ══════════════════════════════════════════
+       HOW IT WORKS
+  ══════════════════════════════════════════ -->
+  <section class="how-section" id="how">
     <h2 id="howTitle"><span>איך</span> זה עובד?</h2>
     <div class="how-grid">
       <div class="how-card fade-in">
@@ -630,7 +811,9 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ══════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════ -->
   <div class="contact-section" id="contact">
     <h2 id="contactTitle">צרו קשר</h2>
     <p class="subtitle" id="contactSub">השאירו פרטים ואחזור אליכם בהקדם</p>
@@ -677,6 +860,9 @@
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
   <footer>
     <div class="footer-grid">
       <div class="footer-col">
@@ -721,7 +907,11 @@
     </div>
   </footer>
 
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
   <script>
+    /* ── Contact form ── */
     const form = document.getElementById('contactForm');
     const successBox = document.getElementById('formSuccess');
     const errorMsg = document.getElementById('formError');
@@ -738,8 +928,9 @@
       } catch { errorMsg.style.display='block'; submitBtn.disabled=false; submitBtn.textContent=cur==='he'?'שליחה':'Send'; }
     });
 
+    /* ── Language toggle ── */
     const txt = {
-      he: { dir:"rtl", lang:"EN", tagline:"מהנדס תוכנה · מהיר · אמין · אישי", remoteBadge:"השתלטות מרחוק זמינה עכשיו", heroTitle:'מהנדס תוכנה & טכנאי מחשבים <span>מוסמך</span>', heroSub:"B.Sc הנדסת תוכנה · תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק", heroBtn1:"צרו קשר", heroBtn2:"צפייה בשירותים", servicesTitle:'<span>שירותים</span> מקצועיים', s1t:"השתלטות מרחוק", s1d:"פתרון תקלות מהיר ללא צורך בהגעה פיזית", s2t:"תיקון מחשבים", s2d:"תקלות חומרה ותוכנה לכל סוגי המחשבים", s3t:"שיפור ביצועים", s3d:"האצת מחשבים איטיים ושדרוג מערכות", s4t:"גיבוי ושחזור", s4d:"הגנה על המידע ושחזור קבצים שאבדו", s5t:"התקנת Windows", s5d:"התקנה ושדרוג מערכת הפעלה", expTitle:'<span>ניסיון</span> מקצועי', e1c:"One טכנולוגיות", e1r:"תומך טכני Tier 1 / טכנאי מחשבים", e1b:"השתלטות מרחוק · SysAid · AD · AnyDesk", e2c:"נס טכנולוגיות", e2r:"מטמיע ומדריך מערכות מידע", e2b:"תמיכה · הדרכה · הרשאות גישה", e3c:"ג'ון ברייס", e3r:"מטמיע ומדריך מערכות מידע", e3b:"Microsoft 365 CRM · רשות המיסים", e4c:"מערך הסייבר הלאומי", e4r:"עוזר טכנולוגי / אנליסט", e4b:"ניטור · זיהוי אירועי סייבר · מחקר",
+      he: { dir:"rtl", lang:"EN", tagline:"מהיר · אמין · אישי", remoteBadge:"השתלטות מרחוק זמינה עכשיו", heroTitle:'מהנדס תוכנה & טכנאי מחשבים <span>מוסמך</span>', heroSub:"B.Sc הנדסת תוכנה · תמיכה טכנית לעסקים ולפרטיים · תיקון, שדרוג, השתלטות מרחוק", heroBtn1:"צרו קשר", heroBtn2:"צפייה בשירותים", servicesTitle:'<span>שירותים</span> מקצועיים', s1t:"השתלטות מרחוק", s1d:"פתרון תקלות מהיר ללא צורך בהגעה פיזית", s2t:"תיקון מחשבים", s2d:"תקלות חומרה ותוכנה לכל סוגי המחשבים", s3t:"שיפור ביצועים", s3d:"האצת מחשבים איטיים ושדרוג מערכות", s4t:"גיבוי ושחזור", s4d:"הגנה על המידע ושחזור קבצים שאבדו", s5t:"התקנת Windows", s5d:"התקנה ושדרוג מערכת הפעלה", expTitle:'<span>ניסיון</span> מקצועי',
         expQuote:'מהנדס תוכנה עם <span>B.Sc</span> וניסיון מעשי ב-<span>4 ארגונים</span>. מביא עומק טכנולוגי אמיתי לכל תקלה.',
         expOrgs:'<span>One טכנולוגיות</span><span>נס טכנולוגיות</span><span>ג׳ון ברייס</span><span>מערך הסייבר הלאומי</span>', contactTitle:"צרו קשר", contactSub:"השאירו פרטים ואחזור אליכם בהקדם", quickTitle:"מעדיפים ישירות?", waBtn:"שלחו WhatsApp", areaText:"אזור המרכז והדרום", hoursText:'א\'-ה\' 9:00-19:00 | ו\' עד כניסת שבת | מוצ"ש מצאת השבת', labelName:"שם מלא *", labelPhone:"טלפון *", labelCity:"עיר / אזור", labelService:"סוג השירות", labelDesc:"תיאור הבעיה", optDefault:"בחר שירות...", optRemote:"השתלטות מרחוק", optRepair:"תיקון מחשב", optUpgrade:"שדרוג מחשב", optWindows:"התקנת Windows", optBackup:"גיבוי ושחזור", optOther:"אחר", submitBtn:"שליחה", successMsg:"תודה! קיבלנו את פנייתך ונחזור אליך בהקדם.", footerText:"© 2025 Lior IT Services · כל הזכויות שמורות",
         availText:"זמין עכשיו — זמן תגובה עד שעה",
@@ -749,7 +940,7 @@
         how1t:"צרו קשר", how1d:"התקשרו, שלחו WhatsApp או מלאו את הטופס — נקבע שיחה ראשונית קצרה להבנת הצורך",
         how2t:"אבחון", how2d:"אבחן את הבעיה — מרחוק או פיזית. לרוב האבחון מהיר ומדויק",
         how3t:"פתרון ותשלום", how3d:"מתקן את הבעיה, מסביר מה נעשה ומחיר השירות נקבע לפי הצורך הספציפי" },
-      en: { dir:"ltr", lang:"עב", tagline:"Fast · Reliable · Personal", remoteBadge:"Remote support available now", heroTitle:'Software Engineer & <span>Certified IT Technician</span>', heroSub:"B.Sc Software Engineering · IT support for businesses & individuals · Repair, upgrade, remote support", heroBtn1:"Contact Us", heroBtn2:"View Services", servicesTitle:'Professional <span>Services</span>', s1t:"Remote Support", s1d:"Fast troubleshooting without a physical visit", s2t:"Computer Repair", s2d:"Hardware & software issues for all computer types", s3t:"Performance Boost", s3d:"Speed up slow computers and upgrade systems", s4t:"Backup & Recovery", s4d:"Data protection and file recovery", s5t:"Windows Install", s5d:"OS installation and upgrade", expTitle:'Professional <span>Experience</span>', e1c:"One Technologies", e1r:"Tier 1 Technical Support / IT Technician", e1b:"Remote Access · SysAid · AD · AnyDesk", e2c:"Ness Technologies", e2r:"Systems Trainer & Implementer", e2b:"Support · Training · Access Permissions", e3c:"John Bryce", e3r:"Systems Trainer & Implementer", e3b:"Microsoft 365 CRM · Tax Authority", e4c:"National Cyber Directorate", e4r:"Technology Assistant / Analyst", e4b:"Monitoring · Cyber Event Detection · Research",
+      en: { dir:"ltr", lang:"עב", tagline:"Fast · Reliable · Personal", remoteBadge:"Remote support available now", heroTitle:'Software Engineer & <span>Certified IT Technician</span>', heroSub:"B.Sc Software Engineering · IT support for businesses & individuals · Repair, upgrade, remote support", heroBtn1:"Contact Us", heroBtn2:"View Services", servicesTitle:'Professional <span>Services</span>', s1t:"Remote Support", s1d:"Fast troubleshooting without a physical visit", s2t:"Computer Repair", s2d:"Hardware & software issues for all computer types", s3t:"Performance Boost", s3d:"Speed up slow computers and upgrade systems", s4t:"Backup & Recovery", s4d:"Data protection and file recovery", s5t:"Windows Install", s5d:"OS installation and upgrade", expTitle:'Professional <span>Experience</span>',
         expQuote:'Software engineer with a <span>B.Sc</span> and hands-on experience at <span>4 organizations</span>. Brings real technical depth to every problem.',
         expOrgs:'<span>One Technologies</span><span>Ness Technologies</span><span>John Bryce</span><span>National Cyber Directorate</span>', contactTitle:"Contact Us", contactSub:"Leave your details and I'll get back to you soon", quickTitle:"Prefer direct contact?", waBtn:"Send WhatsApp", areaText:"Center & South Israel", hoursText:"Sun-Thu 9:00-19:00 | Fri until Shabbat | Sat night after Shabbat", labelName:"Full Name *", labelPhone:"Phone *", labelCity:"City / Area", labelService:"Service Type", labelDesc:"Problem Description", optDefault:"Select service...", optRemote:"Remote Support", optRepair:"Computer Repair", optUpgrade:"Upgrade", optWindows:"Windows Install", optBackup:"Backup & Recovery", optOther:"Other", submitBtn:"Send", successMsg:"Thank you! We received your message and will get back to you soon.", footerText:"© 2025 Lior IT Services · All rights reserved",
         availText:"Available now — response within 1 hour",
@@ -782,28 +973,50 @@
       }
     }
 
-    // Scroll animations
+    /* ── Scroll animations ── */
     document.body.classList.add('js-ready');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    /* ── Dropdown nav ── */
+    (function(){
+      var wrap = document.getElementById('svcWrap'),
+          btn  = document.getElementById('svcBtn'),
+          ham  = document.getElementById('hamburger'),
+          mob  = document.getElementById('mobMenu'),
+          ms   = document.getElementById('mSvcBtn'),
+          sub  = document.getElementById('mSub'),
+          mch  = document.getElementById('mChev');
+
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var o = wrap.classList.toggle('open');
+        btn.setAttribute('aria-expanded', o);
+      });
+      document.addEventListener('click', function(e) {
+        if (!wrap.contains(e.target)) {
+          wrap.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          wrap.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      ham.addEventListener('click', function() { mob.classList.toggle('open'); });
+      ms.addEventListener('click', function() {
+        var o = sub.classList.toggle('open');
+        mch.style.transform = o ? 'rotate(180deg)' : '';
+      });
+      mob.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { mob.classList.remove('open'); });
+      });
+    })();
   </script>
-<script>
-  (function(){
-    var wrap=document.getElementById('svcWrap'),btn=document.getElementById('svcBtn'),
-            ham=document.getElementById('hamburger'),mob=document.getElementById('mobMenu'),
-            ms=document.getElementById('mSvcBtn'),sub=document.getElementById('mSub'),
-            mch=document.getElementById('mChev');
-    btn.addEventListener('click',function(e){e.stopPropagation();var o=wrap.classList.toggle('open');btn.setAttribute('aria-expanded',o);});
-    document.addEventListener('click',function(e){if(!wrap.contains(e.target)){wrap.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'){wrap.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-    ham.addEventListener('click',function(){mob.classList.toggle('open');});
-    ms.addEventListener('click',function(){var o=sub.classList.toggle('open');mch.style.transform=o?'rotate(180deg)':'';});
-    // Close mobile menu on any link click
-    mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');});});
-  })();
-</script>
 
 </body>
 </html>
