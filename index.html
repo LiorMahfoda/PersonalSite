@@ -170,6 +170,7 @@
       min-width: 48px;
       text-align: center;
       font-family: inherit;
+      user-select: none;
     }
     .lang-btn:hover, .lang-btn:active { background: #4a9eff; color: #0f2744; }
 
@@ -304,7 +305,10 @@
     @media (max-width: 720px) {
       .desktop-nav { display: none; }
       .hamburger { display: flex; }
-      .lang-btn { min-width: 44px; padding: 6px 10px; }
+      .lang-btn { min-width: 44px; padding: 6px 10px; font-size: 12px; }
+      .nav-inner { padding: 0 1rem; height: 58px; }
+      .logo-text .brand { font-size: 13px; }
+      .logo-text .tagline { display: none; }
     }
 
     /* ══════════════════════════════════════════
@@ -627,11 +631,21 @@
     [dir="ltr"] { direction: ltr; }
 
     @media (max-width: 680px) {
-      .hero-logo { height: 200px; }
-      .hero-text h1 { font-size: 22px; }
+      .hero-logo { height: 160px; }
+      .hero-text { padding: 1.5rem 1rem 2rem; }
+      .hero-text h1 { font-size: 20px; }
+      .hero-text p { font-size: 13px; }
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .form-row { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-section, .exp-section, .how-section, .contact-section { padding: 2rem 1rem; }
+      .exp-quote { font-size: 15px; }
+      .how-grid { grid-template-columns: 1fr; }
+      .wa-float { bottom: 16px; left: 16px; width: 50px; height: 50px; }
+      .wa-float svg { width: 26px; height: 26px; }
+      .wa-float-tooltip { display: none; }
+      .phone-big { font-size: 22px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     }
   </style>
 </head>
@@ -707,7 +721,7 @@
       </nav>
 
       <!-- Lang toggle + hamburger -->
-      <button class="lang-btn" id="langBtn" onclick="toggleLang()" ontouchend="toggleLang();event.preventDefault()">EN</button>
+      <button class="lang-btn" id="langBtn">EN</button>
       <button class="hamburger" id="hamburger" aria-label="פתח תפריט">
         <span></span><span></span><span></span>
       </button>
@@ -952,26 +966,47 @@
         how3t:"Fix & Payment", how3d:"Problem solved, I explain what was done and pricing is based on your specific need" }
     };
     let cur = 'he';
-    let _langLock = false;
+
+    // IDs that are <button> but should have their text updated by the lang system
+    const BUTTON_TEXT_IDS = new Set(['submitBtn']);
+
     function toggleLang() {
-      if (_langLock) return;
-      _langLock = true;
-      setTimeout(() => _langLock = false, 300);
-      cur = cur==='he' ? 'en' : 'he';
+      cur = cur === 'he' ? 'en' : 'he';
       const d = txt[cur];
+
+      // Page + header direction
       document.getElementById('site').dir = d.dir;
       document.documentElement.lang = cur;
+      document.getElementById('site-header').dir = 'rtl'; // header always RTL
+
+      // Lang button label
       document.getElementById('langBtn').textContent = d.lang;
+
+      // Tagline (special case — just text, no innerHTML)
       document.getElementById('tagline').textContent = d.tagline;
+
+      // All other translatable elements
       for (const k in d) {
-        if (k==='dir'||k==='lang'||k==='tagline') continue;
+        if (k === 'dir' || k === 'lang' || k === 'tagline') continue;
         const el = document.getElementById(k);
         if (!el) continue;
-        if (el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder = d[k];
-        else if (el.tagName==='BUTTON') el.textContent = d[k];
-        else el.innerHTML = d[k];
+        const tag = el.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA') {
+          el.placeholder = d[k];
+        } else if (tag === 'BUTTON' && !BUTTON_TEXT_IDS.has(k)) {
+          // skip nav/lang buttons — they manage themselves
+          continue;
+        } else {
+          el.innerHTML = d[k];
+        }
       }
     }
+
+    // Single unified click handler — no ontouchend double-fire
+    document.getElementById('langBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleLang();
+    });
 
     /* ── Scroll animations ── */
     document.body.classList.add('js-ready');
