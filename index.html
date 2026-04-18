@@ -628,50 +628,6 @@
     .js-ready .fade-in:nth-child(5) { transition-delay: 0.4s; }
 
     /* ══════════════════════════════════════════
-       TESTIMONIALS
-    ══════════════════════════════════════════ */
-    .testimonials-section {
-      padding: 3rem 2rem;
-      background: #0f2744;
-      border-top: 1px solid rgba(74,158,255,0.15);
-      width: 100%;
-    }
-    .testimonials-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
-    .testimonials-section h2 span { color: #4a9eff; }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .testimonial-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(74,158,255,0.2);
-      border-radius: 16px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .testimonial-card:hover { background: rgba(74,158,255,0.07); transform: translateY(-3px); }
-    .testimonial-stars { color: #f5c518; font-size: 14px; letter-spacing: 2px; }
-    .testimonial-text { font-size: 14px; color: #c8dff5; line-height: 1.7; font-style: italic; }
-    .testimonial-text::before { content: '"'; color: #4a9eff; font-size: 20px; font-style: normal; }
-    .testimonial-text::after  { content: '"'; color: #4a9eff; font-size: 20px; font-style: normal; }
-    .testimonial-author { display: flex; align-items: center; gap: 10px; margin-top: auto; }
-    .testimonial-avatar {
-      width: 36px; height: 36px; border-radius: 50%;
-      background: linear-gradient(135deg, #1a56a0, #4a9eff);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
-    }
-    .testimonial-meta { display: flex; flex-direction: column; }
-    .testimonial-name { font-size: 13px; font-weight: 600; color: #fff; }
-    .testimonial-city { font-size: 11px; color: #5a8ab4; }
-
-    /* ══════════════════════════════════════════
        LOCAL SEO — hidden from visual UI, visible to search engines
     ══════════════════════════════════════════ */
     .local-seo-section {
@@ -708,8 +664,6 @@
     .local-seo-grid a:hover { color: #4a9eff; border-color: rgba(74,158,255,0.3); }
 
     @media (max-width: 680px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .testimonials-section { padding: 2rem 1rem; }
       .local-seo-section { padding: 1.5rem 1rem 0.75rem; }
     }
 
@@ -902,52 +856,6 @@
         <h3 id="how3t">פתרון ותשלום</h3>
         <p id="how3d">מתקן את הבעיה, מסביר מה נעשה ומחיר השירות נקבע לפי הצורך הספציפי</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       TESTIMONIALS
-  ══════════════════════════════════════════ -->
-  <section class="testimonials-section" id="testimonials">
-    <h2><span>לקוחות</span> ממליצים</h2>
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card fade-in">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">תיקן לי את המחשב תוך שעה דרך השתלטות מרחוק. מקצועי, מהיר וסביר במחיר. ממליץ בחום!</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">דכ</div>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">דוד כהן</span>
-            <span class="testimonial-city">באר שבע</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card fade-in">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">שידרג לי את ה-SSD והמחשב טס. הגיע בזמן, הסביר כל שלב ולא גבה יתר על המידה. שירות מעולה.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">מל</div>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">מירי לוי</span>
-            <span class="testimonial-city">נתיבות</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card fade-in">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">שחזר לי קבצים שחשבתי שאבדו לנצח. ליאור יודע מה הוא עושה — מהנדס אמיתי, לא סתם טכנאי.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">יא</div>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">יוסי אברהם</span>
-            <span class="testimonial-city">אשקלון</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
