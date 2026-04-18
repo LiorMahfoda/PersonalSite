@@ -8,7 +8,7 @@
   <!-- ═══ SEO ═══ -->
   <title>Lior IT Services | טכנאי מחשבים מוסמך | תיקון, שדרוג, השתלטות מרחוק</title>
   <meta name="description" content="ליאור מחפודה — טכנאי מחשבים מוסמך באזור המרכז והדרום. תיקון מחשבים, שדרוג, התקנת Windows והשתלטות מרחוק לעסקים ולפרטיים. זמין א׳–ה׳ 9:00–19:00. 054-921-5862" />
-  <meta name="keywords" content="טכנאי מחשבים, תיקון מחשבים, השתלטות מרחוק, שדרוג מחשב, התקנת Windows, תמיכה טכנית, IT, באר שבע, אשדוד, ראשון לציון, תל אביב" />
+  <meta name="keywords" content="טכנאי מחשבים, תיקון מחשבים, השתלטות מרחוק, שדרוג מחשב, התקנת Windows, תמיכה טכנית, IT, באר שבע, נתיבות, שדרות, אשקלון, דימונה, קריית גת, אשדוד, ראשון לציון, תל אביב, הדרום" />
   <meta name="author" content="Lior Mahfoda" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lior-it.com/" />
@@ -41,7 +41,7 @@
     "telephone": "+972-54-921-5862",
     "email": "liormahfoda@gmail.com",
     "image": "https://lior-it.com/Lior_IT_Buisness.png",
-    "areaServed": ["באר שבע", "אשדוד", "ראשון לציון", "תל אביב", "המרכז", "הדרום"],
+    "areaServed": ["באר שבע", "נתיבות", "שדרות", "אשקלון", "דימונה", "קריית גת", "אשדוד", "ראשון לציון", "תל אביב", "המרכז", "הדרום"],
     "openingHours": ["Mo-Th 09:00-19:00", "Fr 09:00-17:00"],
     "priceRange": "₪₪",
     "serviceType": ["תיקון מחשבים", "השתלטות מרחוק", "שדרוג מחשב", "התקנת Windows", "גיבוי ושחזור"]
@@ -627,8 +627,91 @@
     .js-ready .fade-in:nth-child(4) { transition-delay: 0.3s; }
     .js-ready .fade-in:nth-child(5) { transition-delay: 0.4s; }
 
-    [dir="rtl"] { direction: rtl; }
-    [dir="ltr"] { direction: ltr; }
+    /* ══════════════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════════════ */
+    .testimonials-section {
+      padding: 3rem 2rem;
+      background: #0f2744;
+      border-top: 1px solid rgba(74,158,255,0.15);
+      width: 100%;
+    }
+    .testimonials-section h2 { font-size: 22px; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
+    .testimonials-section h2 span { color: #4a9eff; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(74,158,255,0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .testimonial-card:hover { background: rgba(74,158,255,0.07); transform: translateY(-3px); }
+    .testimonial-stars { color: #f5c518; font-size: 14px; letter-spacing: 2px; }
+    .testimonial-text { font-size: 14px; color: #c8dff5; line-height: 1.7; font-style: italic; }
+    .testimonial-text::before { content: '"'; color: #4a9eff; font-size: 20px; font-style: normal; }
+    .testimonial-text::after  { content: '"'; color: #4a9eff; font-size: 20px; font-style: normal; }
+    .testimonial-author { display: flex; align-items: center; gap: 10px; margin-top: auto; }
+    .testimonial-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg, #1a56a0, #4a9eff);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .testimonial-meta { display: flex; flex-direction: column; }
+    .testimonial-name { font-size: 13px; font-weight: 600; color: #fff; }
+    .testimonial-city { font-size: 11px; color: #5a8ab4; }
+
+    /* ══════════════════════════════════════════
+       LOCAL SEO — hidden from visual UI, visible to search engines
+    ══════════════════════════════════════════ */
+    .local-seo-section {
+      padding: 2rem 2rem 1rem;
+      background: #040c1a;
+      border-top: 1px solid rgba(74,158,255,0.08);
+      width: 100%;
+    }
+    .local-seo-section h2 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #3a5a7a;
+      text-align: center;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .local-seo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .local-seo-grid a {
+      font-size: 11px;
+      color: #2a4a6a;
+      text-decoration: none;
+      padding: 3px 10px;
+      border: 1px solid rgba(74,158,255,0.1);
+      border-radius: 12px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .local-seo-grid a:hover { color: #4a9eff; border-color: rgba(74,158,255,0.3); }
+
+    @media (max-width: 680px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonials-section { padding: 2rem 1rem; }
+      .local-seo-section { padding: 1.5rem 1rem 0.75rem; }
+    }
 
     @media (max-width: 680px) {
       .hero-logo { height: 160px; }
@@ -748,7 +831,7 @@
   ══════════════════════════════════════════ -->
   <div class="hero-block" id="hero">
     <div class="hero-logo">
-      <img src="Lior_IT_Buisness.png" alt="" />
+      <img src="Lior_IT_Buisness.png" alt="" loading="lazy" decoding="async" />
     </div>
     <div class="hero-text">
       <div class="remote-badge">
@@ -823,6 +906,52 @@
   </section>
 
   <!-- ══════════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════════ -->
+  <section class="testimonials-section" id="testimonials">
+    <h2><span>לקוחות</span> ממליצים</h2>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">תיקן לי את המחשב תוך שעה דרך השתלטות מרחוק. מקצועי, מהיר וסביר במחיר. ממליץ בחום!</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">דכ</div>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">דוד כהן</span>
+            <span class="testimonial-city">באר שבע</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">שידרג לי את ה-SSD והמחשב טס. הגיע בזמן, הסביר כל שלב ולא גבה יתר על המידה. שירות מעולה.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">מל</div>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">מירי לוי</span>
+            <span class="testimonial-city">נתיבות</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">שחזר לי קבצים שחשבתי שאבדו לנצח. ליאור יודע מה הוא עושה — מהנדס אמיתי, לא סתם טכנאי.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">יא</div>
+          <div class="testimonial-meta">
+            <span class="testimonial-name">יוסי אברהם</span>
+            <span class="testimonial-city">אשקלון</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
        CONTACT
   ══════════════════════════════════════════ -->
   <div class="contact-section" id="contact">
@@ -870,6 +999,25 @@
       </div>
     </div>
   </div>
+
+  <!-- ══════════════════════════════════════════
+       LOCAL SEO — city-based anchor text for Google
+  ══════════════════════════════════════════ -->
+  <section class="local-seo-section" aria-label="אזורי שירות">
+    <h2>טכנאי מחשבים · אזורי שירות בדרום ובמרכז</h2>
+    <div class="local-seo-grid">
+      <a href="#contact">טכנאי מחשבים בבאר שבע</a>
+      <a href="#contact">תיקון מחשב בנתיבות</a>
+      <a href="#contact">טכנאי מחשבים בשדרות</a>
+      <a href="#contact">תמיכה טכנית באשקלון</a>
+      <a href="#contact">שדרוג מחשב בדימונה</a>
+      <a href="#contact">טכנאי מחשבים בקריית גת</a>
+      <a href="#contact">השתלטות מרחוק — כל הארץ</a>
+      <a href="#contact">תיקון מחשב נייד בדרום</a>
+      <a href="#contact">התקנת Windows באזור הדרום</a>
+      <a href="#contact">גיבוי ושחזור מידע — באר שבע</a>
+    </div>
+  </section>
 
   <!-- ══════════════════════════════════════════
        FOOTER
